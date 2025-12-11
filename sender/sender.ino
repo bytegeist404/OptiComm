@@ -14,7 +14,6 @@ void sendByte(uint8_t b) {
     sendBit((b >> i) & 1);
   }
 
-
   sendBit(0);  // stop bit
 
   delay(BIT_DURATION_MS * 2);

@@ -1,15 +1,16 @@
-# sender.py
-import socket
+import serial
 
-HOST = '127.0.0.1'
-PORT = 5000
+PORT = 'COM3'
+BAUD = 115200
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.connect((HOST, PORT))
-
-print("Connected to receiver. Type to send:")
+ser = serial.Serial(PORT, BAUD)
+print(f"[Sender PC] Connected to Arduino on {PORT} at {BAUD} baud.")
+print("Type messages to send. Press CTRL+C to exit.")
 
 while True:
-    text = input("> ")
-    sock.send(text.encode("utf-8"))
- 
+    try:
+        text = input("> ")
+        ser.write(text.encode("utf-8"))
+    except KeyboardInterrupt:
+        print("\nExiting...")
+        break

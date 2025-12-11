@@ -14,10 +14,14 @@ float readSignal() {
 
 bool readBit() {
   unsigned long start = millis();
-  while (millis() - start < BIT_DURATION_MS) continue;
-  if (readSignal() > SIGNAL_THRESHOLD) return true;
-  return false;
+  float avg = 0.;
+
+  while (millis() - start < BIT_DURATION_MS)
+      avg += readSignal();
+
+  return avg / (millis() - start) > SIGNAL_THRESHOLD;
 }
+
 
 uint8_t receiveByte() {
   readBit();  // start bit
