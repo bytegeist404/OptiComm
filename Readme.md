@@ -342,16 +342,3 @@ This is all that is required — no networking, no additional software.
 * Error detection (checksums/parity)
 * A 3D-printed optical focusing system
 * Use LEDs for safe classroom demos
-
----
-
-# 🎉 Project Goals
-
-This project is designed to be:
-
-* Easy to understand
-* Easy to extend
-* Demonstrative for Jugend Forscht judges
-* Robust enough to work in real environments
-
-You now have a clean, modular system where **each PC handles only its own Arduino** — no local networking, no complicated message routing.
