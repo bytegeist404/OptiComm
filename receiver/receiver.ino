@@ -15,11 +15,14 @@ float readSignal() {
 bool readBit() {
   unsigned long start = millis();
   float avg = 0.;
+  float samples = 0.;
 
-  while (millis() - start < BIT_DURATION_MS)
-      avg += readSignal();
+  while (millis() - start < BIT_DURATION_MS) {
+    avg += readSignal();
+    samples++;
+  }
 
-  return avg / (millis() - start) > SIGNAL_THRESHOLD;
+  return avg / samples > SIGNAL_THRESHOLD;
 }
 
 
