@@ -1,20 +1,42 @@
-import logging
-import math
+import configparser
 import os
 import struct
 import time
-from collections import deque
+from pathlib import Path
 
 import serial
 
-# CONFIG
-PORT_RECEIVER = "/dev/ttyACM1"
-BAUDRATE = 115200
-SYNC_BYTE = 0xAA
+cfg = configparser.ConfigParser()
+cfg.read("config.ini")
 
-BIT_DURATION = 0.2  # seconds per bit
-START_MARKER = [int(c) for c in "1010101011100010"]
-PAYLOAD_LENGTH_BITS = 32
+
+def get(section, key, fallback=None, cast=str):
+    try:
+        val = cfg.get(section, key)
+        return cast(val)
+    except Exception:
+        return fallback
+
+
+PORT_RECEIVER = get("serial", "port_reciever", "/dev/ttyACM1", str)
+BAUDRATE = get("serial", "baudrate", 115200, int)
+SYNC_BYTE = get("serial", "sync_byte", "0xAA", str)
+if isinstance(SYNC_BYTE, str) and SYNC_BYTE.startswith("0x"):
+    SYNC_BYTE = int(SYNC_BYTE, 16)
+else:
+    SYNC_BYTE = int(SYNC_BYTE)
+
+BIT_DURATION = get("timing", "bit_duration", 0.2, float)
+PREAMBLE = [int(c) for c in get("format", "preamble", "1010101011100010", str)]
+
+STREAM_FILE = Path(get("io", "stream_file", ".stream", str))
+RECEIVED_DIR = Path(get("io", "received_dir", "received", str))
+BUFFERING = int(get("io", "buffering", -1, int))
+
+AMP_VAR_THRESHOLD = get("thresholds", "amp_var_threshold", 10, int)
+
+
+RECEIVED_DIR.mkdir(parents=True, exist_ok=True)
 RECORD = struct.Struct("<dfffB7x")
 
 
@@ -23,8 +45,7 @@ def log_sample(f, ts, raw, ema, thr, transition, sampled):
     f.write(RECORD.pack(ts, raw, ema, thr, flags))
 
 
-def bits_to_bytes(bits: list[int]) -> bytes:
-    """Convert list of bits (MSB-first per byte) into bytes."""
+def bits_to_bytes(bits):
     n = (len(bits) // 8) * 8
     bits = bits[:n]
     out = bytearray()
@@ -36,14 +57,14 @@ def bits_to_bytes(bits: list[int]) -> bytes:
     return bytes(out)
 
 
-def bits_to_uint(bits: list[int]) -> int:
+def bits_to_uint(bits):
     value = 0
     for b in bits:
         value = (value << 1) | int(b)
     return value
 
 
-def read_sample(tr: serial.Serial) -> int | None:
+def read_sample(tr: serial.Serial):
     if tr.in_waiting < 3:
         return None
     b = tr.read(1)
@@ -59,20 +80,18 @@ def main():
     rx = serial.Serial(PORT_RECEIVER, BAUDRATE, timeout=0)
     time.sleep(1)
 
-    f = open(".stream", "ab", buffering=0)
+    os.makedirs("received", exist_ok=True)
+    f = open(STREAM_FILE, "ab", buffering=BUFFERING)
 
-    amp_min = 10000
-    amp_max = 0
-
+    amp_min = None
+    amp_max = None
     prev_raw = None
     raw = None
-
     last_transition_ts = None
     next_sample_ts = None
-
-    recording = False
+    recording = None
     payload_length = None
-    bit_history = []
+    bit_history = None
 
     def reset():
         nonlocal amp_min, amp_max, last_transition_ts, next_sample_ts, recording, payload_length, bit_history
@@ -88,7 +107,7 @@ def main():
     reset()
     try:
         while True:
-            now = time.time()
+            now = time.monotonic()
 
             prev_raw = raw
             next_raw = read_sample(rx)
@@ -105,10 +124,11 @@ def main():
             var = abs(raw - prev_raw)
 
             transition = False
+            # If no transition was detected or the last transition was long ago to not detect the same transition again due to the sensor adjusting slowly and the variance is big enough, a transition is assumed to occur
             if (
                 last_transition_ts is None
-                or now - last_transition_ts > 0.2 * BIT_DURATION
-            ) and var > 10:
+                or now - last_transition_ts > 0.5 * BIT_DURATION
+            ) and var > AMP_VAR_THRESHOLD:
                 last_transition_ts = now
                 transition = True
 
@@ -118,8 +138,8 @@ def main():
                     reset()
                     continue
 
-                if next_sample_ts is None:
-                    next_sample_ts = last_transition_ts + BIT_DURATION * 0.5
+            if transition:
+                next_sample_ts = last_transition_ts + BIT_DURATION * 0.5
 
             log_sample(
                 f,
@@ -139,19 +159,19 @@ def main():
 
                 bit_history.append(int(state))
                 if not recording:
-                    bit_history = bit_history[-len(START_MARKER) :]
+                    bit_history = bit_history[-len(PREAMBLE) :]
 
-                    if bit_history == START_MARKER:
+                    if bit_history == PREAMBLE:
                         print("Detected start marker")
                         recording = True
                         bit_history = []
                     continue
 
                 if payload_length is None:
-                    if len(bit_history) < PAYLOAD_LENGTH_BITS:
+                    if len(bit_history) < 32:
                         continue
 
-                    payload_length = bits_to_uint(bit_history[:PAYLOAD_LENGTH_BITS])
+                    payload_length = bits_to_uint(bit_history[:32])
                     print(
                         f"Received Payload length: {payload_length}, eta: {payload_length * BIT_DURATION}"
                     )
@@ -163,12 +183,11 @@ def main():
                         f"Received {len(bit_history)} / {payload_length} bits... (eta: {len(bit_history) * BIT_DURATION} / {payload_length * BIT_DURATION}s)"
                     )
 
-                if len(bit_history) >= payload_length:
+                if len(bit_history) > payload_length:
                     data = bits_to_bytes(bit_history[:payload_length])
-                    filename = f"received/{int(time.time())}.bin"
+                    filename = RECEIVED_DIR / f"{int(time.time())}.bin"
                     with open(filename, "wb") as fp:
                         fp.write(data)
-
                     print(f"Wrote received data to: {filename}")
                     reset()
                     continue
