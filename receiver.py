@@ -1,4 +1,6 @@
+import logging
 import math
+import os
 import struct
 import time
 from collections import deque
@@ -6,13 +8,13 @@ from collections import deque
 import serial
 
 # CONFIG
-
 PORT_RECEIVER = "/dev/ttyACM1"
 BAUDRATE = 115200
 SYNC_BYTE = 0xAA
 
+BIT_DURATION = 0.2  # seconds per bit
 START_MARKER = [int(c) for c in "1010101011100010"]
-END_MARKER = [int(c) for c in "0001110101101000"]
+PAYLOAD_LENGTH_BITS = 32
 RECORD = struct.Struct("<dfffB7x")
 
 
@@ -22,16 +24,15 @@ def log_sample(f, ts, raw, ema, thr, transition, sampled):
 
 
 def bits_to_bytes(bits: list[int]) -> bytes:
-    n = len(bits) // 8 * 8
+    """Convert list of bits (MSB-first per byte) into bytes."""
+    n = (len(bits) // 8) * 8
     bits = bits[:n]
-
     out = bytearray()
     for i in range(0, n, 8):
         byte = 0
         for b in bits[i : i + 8]:
-            byte = (byte << 1) | b
+            byte = (byte << 1) | int(b)
         out.append(byte)
-
     return bytes(out)
 
 
@@ -45,193 +46,138 @@ def bits_to_uint(bits: list[int]) -> int:
 def read_sample(tr: serial.Serial) -> int | None:
     if tr.in_waiting < 3:
         return None
-
     b = tr.read(1)
     if not b or b[0] != SYNC_BYTE:
         return None
-
     data = tr.read(2)
     if len(data) != 2:
         return None
-
     return struct.unpack("<H", data)[0]
 
 
 def main():
-    SAMPLE_RATE = 100
-    CALIBRATION_TRANSITIONS = 8
+    rx = serial.Serial(PORT_RECEIVER, BAUDRATE, timeout=0)
+    time.sleep(1)
 
     f = open(".stream", "ab", buffering=0)
 
-    try:
-        rx = serial.Serial(PORT_RECEIVER, BAUDRATE, timeout=0)
-    except Exception as e:
-        return
-    time.sleep(2)
+    amp_min = 10000
+    amp_max = 0
 
-    ema_tau = 1
-    a = 1 - math.exp(-1 / (SAMPLE_RATE * ema_tau))
-    ema = None
+    prev_raw = None
+    raw = None
 
-    hyst_delta = 100
-
-    prev_state = None
-    curr_state = False
-    transition_detection_ts_q = deque(maxlen=CALIBRATION_TRANSITIONS)
-
-    calibrated_bit_duration = None
-    recording = False
+    last_transition_ts = None
     next_sample_ts = None
-    tmp_bit_q = deque(maxlen=16)
-    payload_length_q = deque(maxlen=32)
+
+    recording = False
     payload_length = None
-    bit_history = None
+    bit_history = []
 
-    def reset_state():
-        nonlocal prev_state, curr_state, transition_detection_ts_q, calibrated_bit_duration, recording, next_sample_ts, tmp_bit_q, payload_length_q, payload_length, bit_history
-        prev_state = None
-        curr_state = False
-        transition_detection_ts_q = deque(maxlen=CALIBRATION_TRANSITIONS)
-
-        calibrated_bit_duration = None
-        recording = False
+    def reset():
+        nonlocal amp_min, amp_max, last_transition_ts, next_sample_ts, recording, payload_length, bit_history
+        amp_min = 10000
+        amp_max = 0
+        last_transition_ts = None
         next_sample_ts = None
-        tmp_bit_q = deque(maxlen=16)
-        payload_length_q = deque(maxlen=32)
+        recording = False
         payload_length = None
-        bit_history = None
-        print("reset state, ready to receive data")
+        bit_history = []
+        print("reset")
 
-    reset_state()
+    reset()
     try:
         while True:
-            raw = read_sample(rx)
-            if raw is None:
-                continue
-
-            if ema is None:
-                ema = raw
-                continue
-
-            if not recording:
-                ema = ema + a * (raw - ema)
-
-            thr = ema - hyst_delta if curr_state else ema + hyst_delta
-            prev_state = curr_state
-            curr_state = raw > thr
-
             now = time.time()
-            transition = prev_state != curr_state
-            if transition:
-                transition_detection_ts_q.append(now)
 
-            calibration_updated = False
+            prev_raw = raw
+            next_raw = read_sample(rx)
+            if next_raw is None:
+                continue
+            raw = float(next_raw)
+
+            if prev_raw is None:
+                continue
+
+            amp_min = min(raw, amp_min)
+            amp_max = max(raw, amp_max)
+
+            var = abs(raw - prev_raw)
+
+            transition = False
             if (
-                not recording
-                and len(transition_detection_ts_q) >= CALIBRATION_TRANSITIONS
-            ):
-                ts = list(transition_detection_ts_q)[-CALIBRATION_TRANSITIONS:]
-                dts = [ts[i + 1] - ts[i] for i in range(len(ts) - 1)]
+                last_transition_ts is None
+                or now - last_transition_ts > 0.2 * BIT_DURATION
+            ) and var > 10:
+                last_transition_ts = now
+                transition = True
 
-                dts_sorted = sorted(dts)
-                median = dts_sorted[len(dts_sorted) // 2]
+            if last_transition_ts is not None:
+                if not recording and now - last_transition_ts > 3.5 * BIT_DURATION:
+                    print("Preamble transition timeout")
+                    reset()
+                    continue
 
-                abs_dev = [abs(dt - median) for dt in dts]
-                abs_dev_sorted = sorted(abs_dev)
-                mad = abs_dev_sorted[len(abs_dev_sorted) // 2]
-
-                if mad != 0:
-                    K = 3.0
-                    kept = [dt for dt in dts if abs(dt - median) <= K * mad]
-
-                    MIN_FRACTION = 0.7
-                    if len(kept) > MIN_FRACTION * len(dts):
-                        calibration_updated = True
-                        next_cbd = sum(kept) / len(kept)
-
-                        if calibrated_bit_duration is None:
-                            calibrated_bit_duration = next_cbd
-                        else:
-                            calibrated_bit_duration = calibrated_bit_duration + 0.5 * (
-                                next_cbd - calibrated_bit_duration
-                            )
-
-                        print(f"Calibrated: {calibrated_bit_duration}")
-
-                transition_detection_ts_q.popleft()
-
-                if calibration_updated:
-                    next_sample_ts = None
-
-            if calibrated_bit_duration and (next_sample_ts is None or transition):
-                next_sample_ts = now + calibrated_bit_duration / 2
-
-            sampled = False
-            if calibrated_bit_duration and next_sample_ts and now >= next_sample_ts:
-                tmp_bit_q.append(curr_state)
-                next_sample_ts += calibrated_bit_duration
-                sampled = True
-
-                if recording:
-                    if payload_length is None:
-                        payload_length_q.append(curr_state)
-
-                        if len(payload_length_q) == 32:
-                            payload_length = bits_to_uint(list(payload_length_q))
-                            print(
-                                f"Received Payload length: {payload_length}, eta: {payload_length * calibrated_bit_duration:.4f}s"
-                            )
-
-                            bit_history = []
-                    else:
-                        if bit_history is None:
-                            continue
-                        bit_history.append(curr_state)
-
-                        if len(bit_history) % int(5 / calibrated_bit_duration) == 0:
-                            print(
-                                f"Received: {len(bit_history)} / {payload_length} bits"
-                            )
-
-                        if len(bit_history) >= payload_length:
-                            print(f"Finished Recording {payload_length} bits")
-
-                            recording = False
-
-                            payload_bits = bit_history[:payload_length]
-
-                            data = bits_to_bytes(payload_bits)
-                            filename = f"received/{int(time.time())}.bin"
-                            with open(filename, "wb") as fp:
-                                fp.write(data)
-                            print(f"Wrote received data to {filename}")
-
-                            reset_state()
-
-                if not recording and list(tmp_bit_q) == START_MARKER:
-                    recording = True
-                    bit_history = []
-                    print(f"Started Recording, ema: {ema}")
+                if next_sample_ts is None:
+                    next_sample_ts = last_transition_ts + BIT_DURATION * 0.5
 
             log_sample(
                 f,
-                ts=time.time(),
+                ts=now,
                 raw=raw,
-                ema=ema or 0.0,
-                thr=thr,
-                transition=(
-                    int(prev_state != curr_state) if prev_state is not None else 0
-                ),
-                sampled=int(sampled),
+                ema=amp_max,
+                thr=amp_min,
+                transition=int(transition),
+                sampled=int(next_sample_ts is not None and now >= next_sample_ts),
             )
-            time.sleep(0.001)
-    except Exception as e:
-        print(e)
-    except KeyboardInterrupt as e:
+
+            if next_sample_ts is not None and now >= next_sample_ts:
+                thr = (amp_max - amp_min) * 0.5 + amp_min
+                state = int(raw > thr)
+
+                next_sample_ts += BIT_DURATION
+
+                bit_history.append(int(state))
+                if not recording:
+                    bit_history = bit_history[-len(START_MARKER) :]
+
+                    if bit_history == START_MARKER:
+                        print("Detected start marker")
+                        recording = True
+                        bit_history = []
+                    continue
+
+                if payload_length is None:
+                    if len(bit_history) < PAYLOAD_LENGTH_BITS:
+                        continue
+
+                    payload_length = bits_to_uint(bit_history[:PAYLOAD_LENGTH_BITS])
+                    print(
+                        f"Received Payload length: {payload_length}, eta: {payload_length * BIT_DURATION}"
+                    )
+                    bit_history = []
+                    continue
+
+                if len(bit_history) % int(5 / BIT_DURATION) == 0:
+                    print(
+                        f"Received {len(bit_history)} / {payload_length} bits... (eta: {len(bit_history) * BIT_DURATION} / {payload_length * BIT_DURATION}s)"
+                    )
+
+                if len(bit_history) >= payload_length:
+                    data = bits_to_bytes(bit_history[:payload_length])
+                    filename = f"received/{int(time.time())}.bin"
+                    with open(filename, "wb") as fp:
+                        fp.write(data)
+
+                    print(f"Wrote received data to: {filename}")
+                    reset()
+                    continue
+
+    except KeyboardInterrupt:
         print("Keyboard Interrupt - Stopping.")
     finally:
-        f.close()
         rx.close()
+        f.close()
 
 
 if __name__ == "__main__":

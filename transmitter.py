@@ -12,9 +12,9 @@ import serial
 PORT_TRANSMITTER = "/dev/ttyACM0"
 BAUDRATE = 115200
 
-BIT_DURATION = 0.5
+BIT_DURATION = 0.2
 START_MARKER: List[int] = [
-    int(c) for c in 4 * "10101010" + "11100010"
+    int(c) for c in "1010101011100010"
 ]  # Turn on and off a few times, to make sure the ema detected the mean value
 
 
