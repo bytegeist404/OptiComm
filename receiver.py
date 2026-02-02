@@ -1,4 +1,5 @@
 import configparser
+import math
 import os
 import struct
 import time
@@ -83,31 +84,40 @@ def main():
     os.makedirs("received", exist_ok=True)
     f = open(STREAM_FILE, "ab", buffering=BUFFERING)
 
-    amp_min = None
-    amp_max = None
-    prev_raw = None
+    state = None
+
     raw = None
+    raw_ema = None
+    RAW_EMA_TAU = 0.01 * BIT_DURATION
+    DELTA = 1
+
+    noise_ema = 0
+    NOISE_EMA_TAU = 0.05 * BIT_DURATION
+
     last_transition_ts = None
     next_sample_ts = None
-    recording = None
+    preamble_found = None
     payload_length = None
     bit_history = None
 
     def reset():
-        nonlocal amp_min, amp_max, last_transition_ts, next_sample_ts, recording, payload_length, bit_history
-        amp_min = 10000
-        amp_max = 0
+        nonlocal state, last_transition_ts, next_sample_ts, preamble_found, payload_length, bit_history
+        state = None
+
         last_transition_ts = None
         next_sample_ts = None
-        recording = False
+        preamble_found = False
         payload_length = None
         bit_history = []
         print("reset")
 
     reset()
     try:
+        now = time.monotonic()
         while True:
+            prev_now = now
             now = time.monotonic()
+            dt = now - prev_now
 
             prev_raw = raw
             next_raw = read_sample(rx)
@@ -118,52 +128,59 @@ def main():
             if prev_raw is None:
                 continue
 
-            amp_min = min(raw, amp_min)
-            amp_max = max(raw, amp_max)
+            if raw_ema is None:
+                raw_ema = raw
+            raw_ema_alpha = 1 - math.exp(-dt / RAW_EMA_TAU)
+            raw_ema += raw_ema_alpha * (raw - raw_ema)
 
-            var = abs(raw - prev_raw)
+            slope = (raw - raw_ema) / DELTA
+            slope = (1 if slope > 0 else -1) * max(0, abs(slope) - 50)
+
+            noise_ema_alpha = 1 - math.exp(-dt / NOISE_EMA_TAU)
+            noise_ema += noise_ema_alpha * (abs(slope) - noise_ema)
 
             transition = False
-            # If no transition was detected or the last transition was long ago to not detect the same transition again due to the sensor adjusting slowly and the variance is big enough, a transition is assumed to occur
-            if (
+            if abs(slope) > noise_ema * AMP_VAR_THRESHOLD and (
                 last_transition_ts is None
                 or now - last_transition_ts > 0.5 * BIT_DURATION
-            ) and var > AMP_VAR_THRESHOLD:
+            ):
                 last_transition_ts = now
                 transition = True
+                state = int(slope > 0)
+                next_sample_ts = last_transition_ts + BIT_DURATION * 0.5
 
             if last_transition_ts is not None:
-                if not recording and now - last_transition_ts > 3.5 * BIT_DURATION:
+                if (
+                    not preamble_found
+                    and now - last_transition_ts > len(PREAMBLE) * BIT_DURATION
+                ):
                     print("Preamble transition timeout")
                     reset()
                     continue
-
-            if transition:
-                next_sample_ts = last_transition_ts + BIT_DURATION * 0.5
 
             log_sample(
                 f,
                 ts=now,
                 raw=raw,
-                ema=amp_max,
-                thr=amp_min,
-                transition=int(transition),
+                ema=slope,
+                thr=noise_ema,  # amp_min,
+                transition=int(transition),  # int(transition),
                 sampled=int(next_sample_ts is not None and now >= next_sample_ts),
             )
 
             if next_sample_ts is not None and now >= next_sample_ts:
-                thr = (amp_max - amp_min) * 0.5 + amp_min
-                state = int(raw > thr)
+                if state is None:
+                    continue
 
                 next_sample_ts += BIT_DURATION
-
                 bit_history.append(int(state))
-                if not recording:
+
+                if not preamble_found:
                     bit_history = bit_history[-len(PREAMBLE) :]
 
                     if bit_history == PREAMBLE:
                         print("Detected start marker")
-                        recording = True
+                        preamble_found = True
                         bit_history = []
                     continue
 
@@ -172,10 +189,14 @@ def main():
                         continue
 
                     payload_length = bits_to_uint(bit_history[:32])
-                    print(
-                        f"Received Payload length: {payload_length}, eta: {payload_length * BIT_DURATION}"
-                    )
                     bit_history = []
+                    if payload_length <= 0:
+                        print(f"Invalid payload length: {payload_length}, aborting")
+                        reset()
+                    else:
+                        print(
+                            f"Received Payload length: {payload_length}, eta: {payload_length * BIT_DURATION}"
+                        )
                     continue
 
                 if len(bit_history) % int(5 / BIT_DURATION) == 0:
