@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import configparser
 import enum
 import queue
 import threading
@@ -12,23 +11,11 @@ from typing import Deque, List, Optional
 
 import serial
 
-cfg = configparser.ConfigParser()
-cfg.read("config.ini")
+PORT_TRANSMITTER = "/dev/ttyACM0"
+BAUDRATE = 115200
 
-
-def get(section: str, key: str, fallback=None, cast=str):
-    try:
-        val = cfg.get(section, key)
-        return cast(val)
-    except Exception:
-        return fallback
-
-
-PORT_TRANSMITTER = get("serial", "port_transmitter", "/dev/ttyACM0", str)
-BAUDRATE = get("serial", "baudrate", 115200, int)
-
-BIT_DURATION = get("timing", "bit_duration", 0.2, float)
-PREAMBLE = [int(c) for c in get("format", "preamble", "1010101011100010", str)]
+BIT_DURATION = 0.05
+PREAMBLE = [int(c) for c in "1010101011100010"]
 
 
 class TxCommand(enum.Enum):
@@ -177,7 +164,6 @@ def main() -> None:
     except KeyboardInterrupt:
         print("\nKeyboard interrupt received, stopping transmitter")
         cmd_q.put(Command(TxCommand.STOP))
-
     t.join(timeout=2.0)
     try:
         tx.close()

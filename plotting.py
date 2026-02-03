@@ -11,12 +11,13 @@ from pyqtgraph.Qt import QtCore, QtWidgets
 
 FILENAME = ".stream"
 
-RECORD = struct.Struct("<dfffB7x")
+# ts (uint32 micros), raw (uint16), raw_ema (float), noise_ema (float), transition (uint8), sampled (uint8)
+RECORD = struct.Struct("<IHffBB")
 RECORD_SIZE = RECORD.size
 
 FPS = 30
-WINDOW_SECONDS = 1.0  # visible time window
-MAX_POINTS = 50_000  # safety cap
+WINDOW_SECONDS = 5.0  # set <= 0 to show full history
+MAX_POINTS = 50_000
 
 FLAG_TRANSITION = 1 << 0
 FLAG_SAMPLED = 1 << 1
@@ -37,12 +38,11 @@ class StreamFilePlotter(QtWidgets.QMainWindow):
         self._refresh_mmap_if_needed()
 
         # ---- buffers ----
-        self.ts = deque(maxlen=MAX_POINTS)
+        self.ts = deque(maxlen=MAX_POINTS)  # seconds
         self.raw = deque(maxlen=MAX_POINTS)
-        self.ema = deque(maxlen=MAX_POINTS)
-        self.thr = deque(maxlen=MAX_POINTS)
+        self.raw_ema = deque(maxlen=MAX_POINTS)
+        self.noise_ema = deque(maxlen=MAX_POINTS)
 
-        # store only timestamps for events (floats)
         self.transition_ts = deque(maxlen=MAX_POINTS)
         self.sampled_ts = deque(maxlen=MAX_POINTS)
 
@@ -53,23 +53,15 @@ class StreamFilePlotter(QtWidgets.QMainWindow):
         self.plot.addLegend()
 
         self.curve_raw = self.plot.plot(pen=pg.mkPen("w", width=1), name="raw")
-        self.curve_ema = self.plot.plot(pen=pg.mkPen("y", width=1), name="ema")
-        self.curve_thr = self.plot.plot(pen=pg.mkPen("c", width=1), name="thr")
+        self.curve_raw_ema = self.plot.plot(pen=pg.mkPen("y", width=2), name="raw_ema")
+        self.curve_noise = self.plot.plot(pen=pg.mkPen("r", width=1), name="noise_ema")
 
-        # vertical line plots — connect='finite' will break lines on np.nan
-        self.lines_transition = pg.PlotDataItem(
-            pen=pg.mkPen((255, 0, 0, 200), width=1),
-            name="transition",
-            connect="finite",
+        self.curve_transition_lines = self.plot.plot(
+            pen=pg.mkPen("c", width=1), name="transition"
         )
-        self.lines_sampled = pg.PlotDataItem(
-            pen=pg.mkPen((0, 255, 0, 200), width=1),
-            name="sampled",
-            connect="finite",
+        self.curve_sampled_lines = self.plot.plot(
+            pen=pg.mkPen("m", width=1), name="sampled"
         )
-
-        self.plot.addItem(self.lines_transition)
-        self.plot.addItem(self.lines_sampled)
 
         # ---- timer ----
         self.timer = QtCore.QTimer()
@@ -79,7 +71,6 @@ class StreamFilePlotter(QtWidgets.QMainWindow):
     # --------------------------------------------------
 
     def _refresh_mmap_if_needed(self):
-        """Ensure mapping matches current file size (remap on grow/truncate)."""
         try:
             current_size = os.fstat(self.file.fileno()).st_size
         except Exception:
@@ -106,7 +97,6 @@ class StreamFilePlotter(QtWidgets.QMainWindow):
             )
             self.mapped_size = current_size
         except Exception:
-            # transient failure — keep state consistent and retry next tick
             self.mm = None
             self.mapped_size = current_size
             if self.offset > self.mapped_size:
@@ -118,7 +108,6 @@ class StreamFilePlotter(QtWidgets.QMainWindow):
     # --------------------------------------------------
 
     def read_new_records(self):
-        """Read all full records appended since last call; remap safely if needed."""
         self._refresh_mmap_if_needed()
         records = []
 
@@ -131,9 +120,9 @@ class StreamFilePlotter(QtWidgets.QMainWindow):
             try:
                 rec = RECORD.unpack_from(self.mm, self.offset)
             except struct.error:
-                # defensive remap and stop this cycle; next tick will retry
                 self._refresh_mmap_if_needed()
                 break
+
             records.append(rec)
             self.offset += RECORD_SIZE
 
@@ -141,28 +130,20 @@ class StreamFilePlotter(QtWidgets.QMainWindow):
 
     # --------------------------------------------------
 
-    def _build_vertical_lines(self, ts_iter, ymin: float, ymax: float):
-        """Return (x_array, y_array) with np.nan separators for vertical segments.
-
-        For each timestamp t produce: [t, t, nan] and [ymin, ymax, nan].
-        """
-        # ts_iter may be deque — iterate and produce floats
+    @staticmethod
+    def _build_vertical_lines(ts_iter, ymin, ymax):
         xs = []
         ys = []
         nan = float("nan")
+
         for t in ts_iter:
-            # ensure numeric float
-            try:
-                tf = float(t)
-            except Exception:
-                continue
-            xs.extend([tf, tf, nan])
+            xs.extend([t, t, nan])
             ys.extend([ymin, ymax, nan])
 
         if not xs:
             return np.array([], dtype=float), np.array([], dtype=float)
 
-        return np.asarray(xs, dtype=float), np.asarray(ys, dtype=float)
+        return np.asarray(xs), np.asarray(ys)
 
     # --------------------------------------------------
 
@@ -171,66 +152,67 @@ class StreamFilePlotter(QtWidgets.QMainWindow):
         if not records:
             return
 
-        for ts, raw, ema, thr, flags in records:
-            # ensure numeric values; drop if corrupt
-            try:
-                ts_f = float(ts)
-                raw_f = float(raw)
-                ema_f = float(ema)
-                thr_f = float(thr)
-            except Exception:
+        appended = False
+
+        for ts_u32, raw_u16, raw_ema_f, noise_ema_f, transition_b, sampled_b in records:
+            # micros → seconds
+            ts_s = ts_u32 * 1e-6
+
+            # defensive corruption check
+            if raw_u16 > 4095:
                 continue
 
-            self.ts.append(ts_f)
-            self.raw.append(raw_f)
-            self.ema.append(ema_f)
-            self.thr.append(thr_f)
+            self.ts.append(ts_s)
+            self.raw.append(float(raw_u16))
+            self.raw_ema.append(float(raw_ema_f))
+            self.noise_ema.append(float(noise_ema_f))
 
-            if flags & FLAG_TRANSITION:
-                self.transition_ts.append(ts_f)
-            if flags & FLAG_SAMPLED:
-                self.sampled_ts.append(ts_f)
+            if transition_b & FLAG_TRANSITION:
+                self.transition_ts.append(ts_s)
+            if sampled_b & FLAG_SAMPLED:
+                self.sampled_ts.append(ts_s)
 
-        if not self.ts:
+            appended = True
+
+        if not appended or not self.ts:
             return
 
-        # ---- update curves ----
-        # convert deques to numeric arrays (pyqtgraph accepts lists too, but arrays are explicit)
-        ts_arr = np.asarray(self.ts, dtype=float)
-        raw_arr = np.asarray(self.raw, dtype=float)
-        ema_arr = np.asarray(self.ema, dtype=float)
-        thr_arr = np.asarray(self.thr, dtype=float)
+        ts_arr = np.asarray(self.ts)
+        raw_arr = np.asarray(self.raw)
+        raw_ema_arr = np.asarray(self.raw_ema)
+        noise_arr = np.asarray(self.noise_ema)
 
         self.curve_raw.setData(ts_arr, raw_arr)
-        self.curve_ema.setData(ts_arr, ema_arr)
-        self.curve_thr.setData(ts_arr, thr_arr)
+        self.curve_raw_ema.setData(ts_arr, raw_ema_arr)
+        self.curve_noise.setData(ts_arr, noise_arr)
 
-        # ---- x window ----
-        tmax = ts_arr[-1]
-        tmin = tmax - WINDOW_SECONDS
-        self.plot.setXRange(tmin, tmax, padding=0)
-
-        # ---- y range ----
-        ymin = min(raw_arr.min(), ema_arr.min(), thr_arr.min())
-        ymax = max(raw_arr.max(), ema_arr.max(), thr_arr.max())
+        ymin = min(raw_arr.min(), raw_ema_arr.min(), noise_arr.min())
+        ymax = max(raw_arr.max(), raw_ema_arr.max(), noise_arr.max())
         if ymin == ymax:
-            ymin -= 1.0
-            ymax += 1.0
+            ymin -= 1
+            ymax += 1
 
-        # ---- vertical event lines ----
         tx, ty = self._build_vertical_lines(self.transition_ts, ymin, ymax)
         sx, sy = self._build_vertical_lines(self.sampled_ts, ymin, ymax)
 
-        # setData with numeric arrays (np.nan breaks segments)
-        self.lines_transition.setData(tx, ty)
-        self.lines_sampled.setData(sx, sy)
+        self.curve_transition_lines.setData(tx, ty)
+        self.curve_sampled_lines.setData(sx, sy)
+
+        tmax = ts_arr[-1]
+        if WINDOW_SECONDS > 0:
+            self.plot.setXRange(tmax - WINDOW_SECONDS, tmax, padding=0)
+        else:
+            self.plot.setXRange(ts_arr[0], tmax, padding=0)
+
+        pad = max(1.0, 0.05 * (ymax - ymin))
+        self.plot.setYRange(ymin - pad, ymax + pad, padding=0)
 
     # --------------------------------------------------
 
     def closeEvent(self, event):
         self.timer.stop()
         try:
-            if self.mm is not None:
+            if self.mm:
                 self.mm.close()
         except Exception:
             pass
@@ -243,13 +225,13 @@ class StreamFilePlotter(QtWidgets.QMainWindow):
 
 def main():
     if not os.path.exists(FILENAME):
-        print(f"Waiting for {FILENAME} to appear...")
+        print(f"Waiting for {FILENAME}...")
         while not os.path.exists(FILENAME):
             time.sleep(0.2)
 
     app = QtWidgets.QApplication(sys.argv)
     win = StreamFilePlotter(FILENAME)
-    win.resize(1200, 500)
+    win.resize(1300, 600)
     win.show()
     sys.exit(app.exec_())
 
