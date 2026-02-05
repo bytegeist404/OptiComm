@@ -7,35 +7,19 @@ from pathlib import Path
 
 import serial
 
-cfg = configparser.ConfigParser()
-cfg.read("config.ini")
-
-
-def get(section, key, fallback=None, cast=str):
-    try:
-        val = cfg.get(section, key)
-        return cast(val)
-    except Exception:
-        return fallback
-
-
 PORT_RECEIVER = "/dev/ttyACM1"
 BAUDRATE = 115200
 SYNC_BYTE = 0xAA
-
-STREAM_FILE = ".stream"
-
-RECORD = struct.Struct("<IH")
-
 
 BIT_DURATION = 0.05
 BIT_DURATION_US = int(BIT_DURATION * 1_000_000)
 PREAMBLE = [int(c) for c in "1010101011100010"]
 
 STREAM_FILE = Path(".stream")
-RECEIVED_DIR = Path("received")
 
+RECEIVED_DIR = Path("received")
 RECEIVED_DIR.mkdir(parents=True, exist_ok=True)
+
 RECORD = struct.Struct("<IHffBB")
 
 
