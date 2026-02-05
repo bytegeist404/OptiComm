@@ -11,7 +11,7 @@ from typing import Deque, List, Optional
 
 import serial
 
-PORT_TRANSMITTER = "/dev/ttyACM0"
+PORT_TRANSMITTER = "COM6"
 BAUDRATE = 115200
 
 BIT_DURATION = 0.05

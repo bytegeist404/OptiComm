@@ -7,7 +7,7 @@ from pathlib import Path
 
 import serial
 
-PORT_RECEIVER = "/dev/ttyACM1"
+PORT_RECEIVER = "COM3"
 BAUDRATE = 115200
 SYNC_BYTE = 0xAA
 
@@ -50,14 +50,11 @@ def read_sample(tr: serial.Serial):
         if b[0] == SYNC_BYTE:
             break
 
-    data = tr.read(7)
-    if len(data) != 7:
+    data = tr.read(6)
+    if len(data) != 6:
         return None, None
 
-    ts, raw, cksum = struct.unpack("<IHB", data)
-
-    if (ts ^ (ts >> 8) ^ (ts >> 16) ^ (ts >> 24) ^ raw ^ (raw >> 8)) & 0xFF != cksum:
-        return None, None
+    ts, raw = struct.unpack("<IH", data)
 
     if raw > 1023:
         return None, None
