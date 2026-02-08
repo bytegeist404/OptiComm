@@ -7,26 +7,9 @@ from pathlib import Path
 
 import serial
 
-cfg = configparser.ConfigParser()
-cfg.read("config.ini")
-
-
-def get(section, key, fallback=None, cast=str):
-    try:
-        val = cfg.get(section, key)
-        return cast(val)
-    except Exception:
-        return fallback
-
-
 PORT_RECEIVER = "/dev/ttyACM1"
 BAUDRATE = 115200
 SYNC_BYTE = 0xAA
-
-STREAM_FILE = ".stream"
-
-RECORD = struct.Struct("<IH")
-
 
 BIT_DURATION = 0.05
 BIT_DURATION_US = int(BIT_DURATION * 1_000_000)
@@ -66,14 +49,11 @@ def read_sample(tr: serial.Serial):
         if b[0] == SYNC_BYTE:
             break
 
-    data = tr.read(7)
-    if len(data) != 7:
+    data = tr.read(6)
+    if len(data) != 6:
         return None, None
 
-    ts, raw, cksum = struct.unpack("<IHB", data)
-
-    if (ts ^ (ts >> 8) ^ (ts >> 16) ^ (ts >> 24) ^ raw ^ (raw >> 8)) & 0xFF != cksum:
-        return None, None
+    ts, raw = struct.unpack("<IH", data)
 
     if raw > 1023:
         return None, None
@@ -147,7 +127,8 @@ def main():
                     last_transition_ts = now
                     transition_flag = True
                     state = int(slope > 0)
-                    next_sample_ts = last_transition_ts + BIT_DURATION_US * 0.5
+                    if state:
+                        next_sample_ts = last_transition_ts + BIT_DURATION_US * 0.5
 
                 if last_transition_ts is not None:
                     if (
@@ -179,7 +160,6 @@ def main():
 
                     if not preamble_found:
                         bit_history = bit_history[-len(PREAMBLE) :]
-
                         if bit_history == PREAMBLE:
                             print("Detected start marker")
                             preamble_found = True
@@ -197,7 +177,7 @@ def main():
                             reset()
                         else:
                             print(
-                                f"Received Payload length: {payload_length}, eta: {payload_length * BIT_DURATION_US}"
+                                f"Received Payload length: {payload_length}, eta: {payload_length * BIT_DURATION}"
                             )
                         continue
 

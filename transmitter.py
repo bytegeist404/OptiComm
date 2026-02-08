@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import enum
 import queue
+import random
 import threading
 import time
 from collections import deque
@@ -16,6 +17,9 @@ BAUDRATE = 115200
 
 BIT_DURATION = 0.05
 PREAMBLE = [int(c) for c in "1010101011100010"]
+
+LOG_FILE_PATH = "tx.log"
+LOG_FILE = None
 
 
 class TxCommand(enum.Enum):
@@ -92,6 +96,8 @@ def transmitter_thread(tx: serial.Serial, cmd_q: "queue.Queue[Command]") -> None
                 print(f"Serial write error: {e}")
                 continue
 
+            LOG_FILE.write(f"{now},{bit}\n")
+
             next_bit_ts = now + BIT_DURATION
 
     except KeyboardInterrupt:
@@ -104,6 +110,9 @@ def transmitter_thread(tx: serial.Serial, cmd_q: "queue.Queue[Command]") -> None
 
 
 def main() -> None:
+    global LOG_FILE
+    LOG_FILE = open(LOG_FILE_PATH, "w")
+
     cmd_q: queue.Queue[Command] = queue.Queue()
 
     tx = serial.Serial(PORT_TRANSMITTER, BAUDRATE, timeout=0)
@@ -165,6 +174,7 @@ def main() -> None:
         print("\nKeyboard interrupt received, stopping transmitter")
         cmd_q.put(Command(TxCommand.STOP))
     t.join(timeout=2.0)
+    LOG_FILE.close()
     try:
         tx.close()
     except Exception:

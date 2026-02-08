@@ -1,0 +1,997 @@
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 17.19573445399874
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 10.441752115999407
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 5.561943481996423
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 15.177944789997127
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 11.864336133003235
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 2.4158251599947107
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 41.576298879001115
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 3.7416013420006493
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 8.907947743005934
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 16.757959481001308
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 5.275973889001762
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 3.619132849002199
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 4.609364228999766
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 10.700319089999539
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 14.9566006870009
+[2026-02-04 01:03:49] Frame 1: sent_bits=1841 expected_bytes=230 received_bytes=230 errors=3 ber=0.001630 wait_s=95.561
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 1840
+total_bit_errors: 3
+overall_ber: 0.0016304347826086956
+avg_wait_time_s: 95.56096704599622
+effective_throughput_bps: 19.449444150344096
+total_wall_time_s: 95.76398642600543
+[2026-02-04 01:05:37] Frame 1: sent_bits=18 expected_bytes=2 received_bytes=2 errors=0 ber=0.000000 wait_s=3.811
+[2026-02-04 01:05:42] Frame 2: sent_bits=33 expected_bytes=4 received_bytes=4 errors=0 ber=0.000000 wait_s=4.563
+[2026-02-04 01:05:52] Frame 3: sent_bits=132 expected_bytes=16 received_bytes=16 errors=0 ber=0.000000 wait_s=9.577
+[2026-02-04 01:06:02] Frame 4: sent_bits=151 expected_bytes=18 received_bytes=18 errors=0 ber=0.000000 wait_s=10.478
+[2026-02-04 01:06:09] Frame 5: sent_bits=77 expected_bytes=9 received_bytes=9 errors=0 ber=0.000000 wait_s=6.768
+
+=== SUMMARY ===
+frames_sent: 5
+frames_success: 5
+frame_success_rate: 1.0
+total_bits_sent: 392
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 7.039537256400218
+effective_throughput_bps: 12.04301075268817
+total_wall_time_s: 36.20239596600004
+
+=== SUMMARY ===
+frames_sent: 0
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 0.0024978229994303547
+[2026-02-04 01:07:29] Frame 1: sent_bits=1106 expected_bytes=138 received_bytes=138 errors=0 ber=0.000000 wait_s=58.456
+[2026-02-04 01:08:12] Frame 2: sent_bits=782 expected_bytes=97 received_bytes=97 errors=0 ber=0.000000 wait_s=42.160
+
+=== SUMMARY ===
+frames_sent: 3
+frames_success: 2
+frame_success_rate: 0.6666666666666666
+total_bits_sent: 1880
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 33.538710350333226
+effective_throughput_bps: 18.951612903225804
+total_wall_time_s: 104.83273714800453
+[2026-02-04 01:10:08] Frame 1: sent_bits=1729 expected_bytes=216 received_bytes=216 errors=5 ber=0.002894 wait_s=89.784
+[2026-02-04 01:11:36] Frame 2: sent_bits=1685 expected_bytes=210 received_bytes=210 errors=0 ber=0.000000 wait_s=87.578
+[2026-02-04 01:13:06] Frame 3: sent_bits=1736 expected_bytes=217 received_bytes=217 errors=1 ber=0.000576 wait_s=90.133
+[2026-02-04 01:13:18] Frame 4: sent_bits=178 expected_bytes=22 received_bytes=22 errors=0 ber=0.000000 wait_s=11.831
+[2026-02-04 01:14:29] Frame 5: sent_bits=1345 expected_bytes=168 received_bytes=168 errors=0 ber=0.000000 wait_s=70.482
+[2026-02-04 01:16:02] Frame 6: sent_bits=1783 expected_bytes=222 received_bytes=222 errors=0 ber=0.000000 wait_s=92.492
+[2026-02-04 01:17:15] Frame 7: sent_bits=1395 expected_bytes=174 received_bytes=174 errors=0 ber=0.000000 wait_s=72.988
+[2026-02-04 01:17:53] Frame 8: sent_bits=704 expected_bytes=88 received_bytes=88 errors=0 ber=0.000000 wait_s=38.249
+[2026-02-04 01:19:14] Frame 9: TIMEOUT (no file in 80.3s)
+[2026-02-04 01:20:52] Frame 10: sent_bits=1898 expected_bytes=237 received_bytes=237 errors=3 ber=0.001582 wait_s=98.207
+[2026-02-04 01:21:31] Frame 11: sent_bits=703 expected_bytes=87 received_bytes=87 errors=0 ber=0.000000 wait_s=38.198
+[2026-02-04 01:21:35] Frame 12: sent_bits=32 expected_bytes=4 received_bytes=4 errors=0 ber=0.000000 wait_s=4.462
+[2026-02-04 01:22:06] Frame 13: sent_bits=549 expected_bytes=68 received_bytes=68 errors=0 ber=0.000000 wait_s=30.431
+[2026-02-04 01:25:32] Frame 14: TIMEOUT (no file in 206.1s)
+[2026-02-04 01:26:10] Frame 15: sent_bits=690 expected_bytes=86 received_bytes=86 errors=0 ber=0.000000 wait_s=37.550
+[2026-02-04 01:26:21] Frame 16: sent_bits=171 expected_bytes=21 received_bytes=21 errors=0 ber=0.000000 wait_s=11.479
+[2026-02-04 01:27:53] Frame 17: sent_bits=1753 expected_bytes=219 received_bytes=219 errors=0 ber=0.000000 wait_s=90.989
+[2026-02-04 01:29:26] Frame 18: sent_bits=1796 expected_bytes=224 received_bytes=224 errors=3 ber=0.001674 wait_s=93.146
+[2026-02-04 01:30:20] Frame 19: sent_bits=1009 expected_bytes=126 received_bytes=126 errors=0 ber=0.000000 wait_s=53.590
+[2026-02-04 01:30:55] Frame 20: sent_bits=631 expected_bytes=78 received_bytes=78 errors=5 ber=0.008013 wait_s=34.589
+[2026-02-04 01:31:22] Frame 21: sent_bits=486 expected_bytes=60 received_bytes=60 errors=1 ber=0.002083 wait_s=27.272
+[2026-02-04 01:31:37] Frame 22: sent_bits=232 expected_bytes=29 received_bytes=29 errors=0 ber=0.000000 wait_s=14.538
+[2026-02-04 01:32:26] Frame 23: sent_bits=919 expected_bytes=114 received_bytes=114 errors=2 ber=0.002193 wait_s=49.032
+[2026-02-04 01:34:24] Frame 24: TIMEOUT (no file in 117.6s)
+[2026-02-04 01:37:27] Frame 25: TIMEOUT (no file in 183.1s)
+[2026-02-04 01:37:31] Frame 26: sent_bits=29 expected_bytes=3 received_bytes=3 errors=0 ber=0.000000 wait_s=4.311
+[2026-02-04 01:39:03] Frame 27: sent_bits=1763 expected_bytes=220 received_bytes=220 errors=1 ber=0.000568 wait_s=91.485
+[2026-02-04 01:39:43] Frame 28: sent_bits=734 expected_bytes=91 received_bytes=91 errors=1 ber=0.001374 wait_s=39.755
+[2026-02-04 01:40:15] Frame 29: sent_bits=572 expected_bytes=71 received_bytes=71 errors=0 ber=0.000000 wait_s=31.632
+[2026-02-04 01:41:51] Frame 30: sent_bits=1856 expected_bytes=232 received_bytes=232 errors=0 ber=0.000000 wait_s=96.103
+[2026-02-04 01:42:27] Frame 31: sent_bits=657 expected_bytes=82 received_bytes=82 errors=0 ber=0.000000 wait_s=35.895
+[2026-02-04 01:43:18] Frame 32: sent_bits=951 expected_bytes=118 received_bytes=118 errors=0 ber=0.000000 wait_s=50.679
+[2026-02-04 01:44:05] Frame 33: sent_bits=883 expected_bytes=110 received_bytes=110 errors=0 ber=0.000000 wait_s=47.220
+[2026-02-04 01:45:24] Frame 34: sent_bits=1504 expected_bytes=188 received_bytes=188 errors=2 ber=0.001330 wait_s=78.455
+[2026-02-04 01:46:43] Frame 35: sent_bits=1506 expected_bytes=188 received_bytes=188 errors=5 ber=0.003324 wait_s=78.555
+[2026-02-04 01:47:58] Frame 36: sent_bits=1434 expected_bytes=179 received_bytes=179 errors=0 ber=0.000000 wait_s=74.943
+[2026-02-04 01:48:04] Frame 37: sent_bits=53 expected_bytes=6 received_bytes=6 errors=0 ber=0.000000 wait_s=5.565
+[2026-02-04 01:48:48] Frame 38: sent_bits=810 expected_bytes=101 received_bytes=101 errors=0 ber=0.000000 wait_s=43.613
+[2026-02-04 01:49:50] Frame 39: sent_bits=1174 expected_bytes=146 received_bytes=146 errors=0 ber=0.000000 wait_s=61.867
+[2026-02-04 01:50:45] Frame 40: sent_bits=1043 expected_bytes=130 received_bytes=130 errors=0 ber=0.000000 wait_s=55.245
+[2026-02-04 01:51:07] Frame 41: sent_bits=381 expected_bytes=47 received_bytes=47 errors=0 ber=0.000000 wait_s=22.061
+[2026-02-04 01:52:40] Frame 42: sent_bits=1773 expected_bytes=221 received_bytes=221 errors=1 ber=0.000566 wait_s=91.989
+[2026-02-04 01:53:42] Frame 43: sent_bits=1174 expected_bytes=146 received_bytes=146 errors=0 ber=0.000000 wait_s=61.860
+[2026-02-04 01:55:21] Frame 44: sent_bits=1916 expected_bytes=239 received_bytes=239 errors=0 ber=0.000000 wait_s=99.162
+[2026-02-04 01:55:41] Frame 45: sent_bits=335 expected_bytes=41 received_bytes=41 errors=2 ber=0.006098 wait_s=19.701
+[2026-02-04 01:56:04] Frame 46: sent_bits=438 expected_bytes=54 received_bytes=54 errors=31 ber=0.071759 wait_s=22.911
+[2026-02-04 01:58:08] Frame 47: TIMEOUT (no file in 123.5s)
+[2026-02-04 01:59:26] Frame 48: sent_bits=1494 expected_bytes=186 received_bytes=186 errors=0 ber=0.000000 wait_s=77.952
+[2026-02-04 01:59:59] Frame 49: sent_bits=600 expected_bytes=75 received_bytes=75 errors=0 ber=0.000000 wait_s=33.037
+[2026-02-04 02:01:26] Frame 50: sent_bits=1676 expected_bytes=209 received_bytes=209 errors=0 ber=0.000000 wait_s=87.083
+[2026-02-04 02:01:33] Frame 51: sent_bits=68 expected_bytes=8 received_bytes=8 errors=0 ber=0.000000 wait_s=6.267
+[2026-02-04 02:03:02] Frame 52: sent_bits=1724 expected_bytes=215 received_bytes=215 errors=2 ber=0.001163 wait_s=89.533
+[2026-02-04 02:04:19] Frame 53: sent_bits=1471 expected_bytes=183 received_bytes=183 errors=0 ber=0.000000 wait_s=76.850
+[2026-02-04 02:05:01] Frame 54: sent_bits=774 expected_bytes=96 received_bytes=96 errors=0 ber=0.000000 wait_s=41.758
+[2026-02-04 02:06:24] Frame 55: sent_bits=1582 expected_bytes=197 received_bytes=197 errors=0 ber=0.000000 wait_s=82.415
+[2026-02-04 02:07:46] Frame 56: sent_bits=1568 expected_bytes=196 received_bytes=196 errors=2 ber=0.001276 wait_s=81.714
+[2026-02-04 02:08:26] Frame 57: sent_bits=739 expected_bytes=92 received_bytes=92 errors=0 ber=0.000000 wait_s=40.004
+[2026-02-04 02:09:35] Frame 58: sent_bits=1307 expected_bytes=163 received_bytes=163 errors=8 ber=0.006135 wait_s=68.628
+[2026-02-04 02:10:55] Frame 59: sent_bits=1539 expected_bytes=192 received_bytes=192 errors=0 ber=0.000000 wait_s=80.213
+[2026-02-04 02:11:57] Frame 60: sent_bits=1166 expected_bytes=145 received_bytes=145 errors=2 ber=0.001724 wait_s=61.462
+[2026-02-04 02:12:35] Frame 61: sent_bits=687 expected_bytes=85 received_bytes=85 errors=1 ber=0.001471 wait_s=37.447
+[2026-02-04 02:13:57] Frame 62: sent_bits=1579 expected_bytes=197 received_bytes=197 errors=2 ber=0.001269 wait_s=82.215
+[2026-02-04 02:15:38] Frame 63: sent_bits=1945 expected_bytes=243 received_bytes=243 errors=1 ber=0.000514 wait_s=100.616
+[2026-02-04 02:17:18] Frame 64: sent_bits=1933 expected_bytes=241 received_bytes=241 errors=1 ber=0.000519 wait_s=100.011
+[2026-02-04 02:18:13] Frame 65: sent_bits=1023 expected_bytes=127 received_bytes=127 errors=1 ber=0.000984 wait_s=54.292
+[2026-02-04 02:18:53] Frame 66: sent_bits=751 expected_bytes=93 received_bytes=93 errors=0 ber=0.000000 wait_s=40.660
+[2026-02-04 02:19:55] Frame 67: sent_bits=1170 expected_bytes=146 received_bytes=146 errors=0 ber=0.000000 wait_s=61.658
+[2026-02-04 02:21:44] Frame 68: TIMEOUT (no file in 108.3s)
+[2026-02-04 02:24:04] Frame 69: TIMEOUT (no file in 139.8s)
+[2026-02-04 02:24:34] Frame 70: TIMEOUT (no file in 30.7s)
+[2026-02-04 02:26:07] Frame 71: TIMEOUT (no file in 92.4s)
+[2026-02-04 02:27:40] Frame 72: TIMEOUT (no file in 93.2s)
+[2026-02-04 02:28:22] Frame 73: TIMEOUT (no file in 41.5s)
+[2026-02-04 02:28:52] Frame 74: TIMEOUT (no file in 30.5s)
+[2026-02-04 02:30:27] Frame 75: TIMEOUT (no file in 94.4s)
+[2026-02-04 02:33:34] Frame 76: TIMEOUT (no file in 187.8s)
+[2026-02-04 02:36:56] Frame 77: TIMEOUT (no file in 201.7s)
+[2026-02-04 02:38:33] Frame 78: TIMEOUT (no file in 96.7s)
+[2026-02-04 02:41:52] Frame 79: TIMEOUT (no file in 199.5s)
+[2026-02-04 02:43:37] Frame 80: TIMEOUT (no file in 104.2s)
+[2026-02-04 02:44:02] Frame 81: TIMEOUT (no file in 25.3s)
+[2026-02-04 02:46:19] Frame 82: TIMEOUT (no file in 137.5s)
+[2026-02-04 02:47:12] Frame 83: TIMEOUT (no file in 52.5s)
+[2026-02-04 02:47:32] Frame 84: TIMEOUT (no file in 20.3s)
+[2026-02-04 02:49:06] Frame 85: TIMEOUT (no file in 94.2s)
+[2026-02-04 02:52:08] Frame 86: TIMEOUT (no file in 181.7s)
+[2026-02-04 02:52:47] Frame 87: TIMEOUT (no file in 38.4s)
+[2026-02-04 02:54:38] Frame 88: TIMEOUT (no file in 111.6s)
+[2026-02-04 02:55:59] Frame 89: TIMEOUT (no file in 80.3s)
+[2026-02-04 02:57:51] Frame 90: TIMEOUT (no file in 112.4s)
+[2026-02-04 03:00:11] Frame 91: TIMEOUT (no file in 140.2s)
+[2026-02-04 03:01:51] Frame 92: TIMEOUT (no file in 99.6s)
+[2026-02-04 03:03:45] Frame 93: TIMEOUT (no file in 113.8s)
+[2026-02-04 03:06:57] Frame 94: TIMEOUT (no file in 192.6s)
+[2026-02-04 03:08:42] Frame 95: TIMEOUT (no file in 105.1s)
+[2026-02-04 03:10:04] Frame 96: TIMEOUT (no file in 82.0s)
+[2026-02-04 03:11:43] Frame 97: TIMEOUT (no file in 98.5s)
+[2026-02-04 03:12:39] Frame 98: TIMEOUT (no file in 56.0s)
+[2026-02-04 03:13:33] Frame 99: TIMEOUT (no file in 53.7s)
+[2026-02-04 03:16:32] Frame 100: TIMEOUT (no file in 179.7s)
+[2026-02-04 03:18:51] Frame 101: TIMEOUT (no file in 138.9s)
+[2026-02-04 03:21:55] Frame 102: TIMEOUT (no file in 184.0s)
+[2026-02-04 03:22:54] Frame 103: TIMEOUT (no file in 58.5s)
+[2026-02-04 03:24:03] Frame 104: TIMEOUT (no file in 68.7s)
+[2026-02-04 03:26:45] Frame 105: TIMEOUT (no file in 162.2s)
+[2026-02-04 03:30:14] Frame 106: TIMEOUT (no file in 209.4s)
+[2026-02-04 03:31:49] Frame 107: TIMEOUT (no file in 94.9s)
+[2026-02-04 03:32:22] Frame 108: TIMEOUT (no file in 32.3s)
+[2026-02-04 03:35:16] Frame 109: TIMEOUT (no file in 174.8s)
+[2026-02-04 03:35:31] Frame 110: TIMEOUT (no file in 14.2s)
+[2026-02-04 03:35:58] Frame 111: TIMEOUT (no file in 27.2s)
+[2026-02-04 03:37:14] Frame 112: TIMEOUT (no file in 76.4s)
+[2026-02-04 03:39:35] Frame 113: TIMEOUT (no file in 141.0s)
+[2026-02-04 03:42:34] Frame 114: TIMEOUT (no file in 179.1s)
+[2026-02-04 03:45:26] Frame 115: TIMEOUT (no file in 171.2s)
+[2026-02-04 03:47:00] Frame 116: TIMEOUT (no file in 94.3s)
+[2026-02-04 03:48:05] Frame 117: TIMEOUT (no file in 65.1s)
+[2026-02-04 03:48:50] Frame 118: TIMEOUT (no file in 45.1s)
+[2026-02-04 03:49:03] Frame 119: TIMEOUT (no file in 12.6s)
+[2026-02-04 03:49:56] Frame 120: TIMEOUT (no file in 53.2s)
+[2026-02-04 03:50:59] Frame 121: TIMEOUT (no file in 63.3s)
+[2026-02-04 03:54:22] Frame 122: TIMEOUT (no file in 202.6s)
+[2026-02-04 03:57:13] Frame 123: TIMEOUT (no file in 170.9s)
+[2026-02-04 03:58:42] Frame 124: TIMEOUT (no file in 88.9s)
+[2026-02-04 03:58:59] Frame 125: TIMEOUT (no file in 16.7s)
+[2026-02-04 04:02:14] Frame 126: TIMEOUT (no file in 195.3s)
+[2026-02-04 04:05:26] Frame 127: TIMEOUT (no file in 191.7s)
+[2026-02-04 04:06:33] Frame 128: TIMEOUT (no file in 67.4s)
+[2026-02-04 04:08:37] Frame 129: TIMEOUT (no file in 123.4s)
+[2026-02-04 04:11:14] Frame 130: TIMEOUT (no file in 157.8s)
+[2026-02-04 04:13:51] Frame 131: TIMEOUT (no file in 156.4s)
+[2026-02-04 04:15:50] Frame 132: TIMEOUT (no file in 119.3s)
+[2026-02-04 04:18:32] Frame 133: TIMEOUT (no file in 162.3s)
+[2026-02-04 04:21:06] Frame 134: TIMEOUT (no file in 153.5s)
+[2026-02-04 04:22:22] Frame 135: TIMEOUT (no file in 75.8s)
+[2026-02-04 04:23:35] Frame 136: TIMEOUT (no file in 72.9s)
+[2026-02-04 04:26:25] Frame 137: TIMEOUT (no file in 170.7s)
+[2026-02-04 04:27:24] Frame 138: TIMEOUT (no file in 59.0s)
+[2026-02-04 04:30:23] Frame 139: TIMEOUT (no file in 178.6s)
+[2026-02-04 04:31:37] Frame 140: TIMEOUT (no file in 73.7s)
+[2026-02-04 04:32:34] Frame 141: TIMEOUT (no file in 57.0s)
+[2026-02-04 04:34:09] Frame 142: TIMEOUT (no file in 94.7s)
+[2026-02-04 04:37:06] Frame 143: TIMEOUT (no file in 177.7s)
+[2026-02-04 04:37:52] Frame 144: TIMEOUT (no file in 46.0s)
+[2026-02-04 04:40:40] Frame 145: TIMEOUT (no file in 167.2s)
+[2026-02-04 04:41:23] Frame 146: TIMEOUT (no file in 43.1s)
+[2026-02-04 04:42:15] Frame 147: TIMEOUT (no file in 52.3s)
+[2026-02-04 04:45:35] Frame 148: TIMEOUT (no file in 200.4s)
+[2026-02-04 04:48:30] Frame 149: TIMEOUT (no file in 174.7s)
+[2026-02-04 04:50:00] Frame 150: TIMEOUT (no file in 89.7s)
+[2026-02-04 04:51:03] Frame 151: TIMEOUT (no file in 63.2s)
+[2026-02-04 04:51:14] Frame 152: TIMEOUT (no file in 10.8s)
+[2026-02-04 04:54:23] Frame 153: TIMEOUT (no file in 188.8s)
+[2026-02-04 04:55:43] Frame 154: TIMEOUT (no file in 80.0s)
+[2026-02-04 04:58:38] Frame 155: TIMEOUT (no file in 175.5s)
+[2026-02-04 04:59:48] Frame 156: TIMEOUT (no file in 69.8s)
+[2026-02-04 05:00:39] Frame 157: TIMEOUT (no file in 51.0s)
+[2026-02-04 05:01:11] Frame 158: TIMEOUT (no file in 31.6s)
+[2026-02-04 05:04:08] Frame 159: TIMEOUT (no file in 176.8s)
+[2026-02-04 05:05:17] Frame 160: TIMEOUT (no file in 69.7s)
+[2026-02-04 05:06:25] Frame 161: TIMEOUT (no file in 67.7s)
+[2026-02-04 05:08:59] Frame 162: TIMEOUT (no file in 154.2s)
+[2026-02-04 05:11:04] Frame 163: TIMEOUT (no file in 125.0s)
+[2026-02-04 05:14:09] Frame 164: TIMEOUT (no file in 184.6s)
+[2026-02-04 05:17:17] Frame 165: TIMEOUT (no file in 188.0s)
+[2026-02-04 05:20:34] Frame 166: TIMEOUT (no file in 197.0s)
+[2026-02-04 05:21:24] Frame 167: TIMEOUT (no file in 49.7s)
+[2026-02-04 05:24:40] Frame 168: TIMEOUT (no file in 195.9s)
+[2026-02-04 05:27:49] Frame 169: TIMEOUT (no file in 189.4s)
+[2026-02-04 05:29:50] Frame 170: TIMEOUT (no file in 120.9s)
+[2026-02-04 05:33:07] Frame 171: TIMEOUT (no file in 196.7s)
+[2026-02-04 05:36:19] Frame 172: TIMEOUT (no file in 192.6s)
+[2026-02-04 05:38:57] Frame 173: TIMEOUT (no file in 157.6s)
+[2026-02-04 05:40:12] Frame 174: TIMEOUT (no file in 75.5s)
+[2026-02-04 05:42:40] Frame 175: TIMEOUT (no file in 148.0s)
+[2026-02-04 05:45:26] Frame 176: TIMEOUT (no file in 165.8s)
+[2026-02-04 05:45:57] Frame 177: TIMEOUT (no file in 30.8s)
+[2026-02-04 05:46:15] Frame 178: TIMEOUT (no file in 17.9s)
+[2026-02-04 05:47:23] Frame 179: TIMEOUT (no file in 67.4s)
+[2026-02-04 05:47:48] Frame 180: TIMEOUT (no file in 25.2s)
+[2026-02-04 05:49:47] Frame 181: TIMEOUT (no file in 119.1s)
+[2026-02-04 05:52:45] Frame 182: TIMEOUT (no file in 178.4s)
+[2026-02-04 05:55:54] Frame 183: TIMEOUT (no file in 189.1s)
+[2026-02-04 05:56:38] Frame 184: TIMEOUT (no file in 43.2s)
+[2026-02-04 05:59:57] Frame 185: TIMEOUT (no file in 199.1s)
+[2026-02-04 06:01:50] Frame 186: TIMEOUT (no file in 113.6s)
+[2026-02-04 06:05:17] Frame 187: TIMEOUT (no file in 206.2s)
+[2026-02-04 06:08:24] Frame 188: TIMEOUT (no file in 187.1s)
+[2026-02-04 06:09:48] Frame 189: TIMEOUT (no file in 84.1s)
+[2026-02-04 06:11:35] Frame 190: TIMEOUT (no file in 106.7s)
+[2026-02-04 06:11:59] Frame 191: TIMEOUT (no file in 24.6s)
+[2026-02-04 06:13:09] Frame 192: TIMEOUT (no file in 69.8s)
+[2026-02-04 06:14:53] Frame 193: TIMEOUT (no file in 104.1s)
+[2026-02-04 06:18:08] Frame 194: TIMEOUT (no file in 195.0s)
+[2026-02-04 06:18:46] Frame 195: TIMEOUT (no file in 37.4s)
+[2026-02-04 06:21:26] Frame 196: TIMEOUT (no file in 160.4s)
+[2026-02-04 06:23:04] Frame 197: TIMEOUT (no file in 98.5s)
+[2026-02-04 06:25:09] Frame 198: TIMEOUT (no file in 124.4s)
+[2026-02-04 06:27:26] Frame 199: TIMEOUT (no file in 137.4s)
+[2026-02-04 06:28:52] Frame 200: TIMEOUT (no file in 85.5s)
+[2026-02-04 06:29:56] Frame 201: TIMEOUT (no file in 63.7s)
+[2026-02-04 06:30:59] Frame 202: TIMEOUT (no file in 63.9s)
+[2026-02-04 06:32:03] Frame 203: TIMEOUT (no file in 63.3s)
+[2026-02-04 06:32:51] Frame 204: TIMEOUT (no file in 48.1s)
+[2026-02-04 06:34:58] Frame 205: TIMEOUT (no file in 126.7s)
+[2026-02-04 06:38:09] Frame 206: TIMEOUT (no file in 191.5s)
+[2026-02-04 06:40:06] Frame 207: TIMEOUT (no file in 116.6s)
+[2026-02-04 06:41:42] Frame 208: TIMEOUT (no file in 95.8s)
+[2026-02-04 06:42:54] Frame 209: TIMEOUT (no file in 71.9s)
+[2026-02-04 06:43:54] Frame 210: TIMEOUT (no file in 60.8s)
+[2026-02-04 06:46:05] Frame 211: TIMEOUT (no file in 130.9s)
+[2026-02-04 06:49:06] Frame 212: TIMEOUT (no file in 180.5s)
+[2026-02-04 06:50:42] Frame 213: TIMEOUT (no file in 95.9s)
+[2026-02-04 06:52:20] Frame 214: TIMEOUT (no file in 98.3s)
+[2026-02-04 06:53:23] Frame 215: TIMEOUT (no file in 63.3s)
+[2026-02-04 06:54:07] Frame 216: TIMEOUT (no file in 43.9s)
+[2026-02-04 06:56:34] Frame 217: TIMEOUT (no file in 147.0s)
+[2026-02-04 06:58:47] Frame 218: TIMEOUT (no file in 132.6s)
+[2026-02-04 07:01:25] Frame 219: TIMEOUT (no file in 158.5s)
+[2026-02-04 07:03:29] Frame 220: TIMEOUT (no file in 123.4s)
+[2026-02-04 07:06:11] Frame 221: TIMEOUT (no file in 162.1s)
+[2026-02-04 07:09:18] Frame 222: TIMEOUT (no file in 186.6s)
+[2026-02-04 07:12:29] Frame 223: TIMEOUT (no file in 191.4s)
+[2026-02-04 07:12:53] Frame 224: TIMEOUT (no file in 24.0s)
+[2026-02-04 07:14:46] Frame 225: TIMEOUT (no file in 113.2s)
+[2026-02-04 07:18:14] Frame 226: TIMEOUT (no file in 207.4s)
+[2026-02-04 07:21:07] Frame 227: TIMEOUT (no file in 173.3s)
+[2026-02-04 07:24:08] Frame 228: TIMEOUT (no file in 180.6s)
+[2026-02-04 07:24:48] Frame 229: TIMEOUT (no file in 40.2s)
+[2026-02-04 07:25:37] Frame 230: TIMEOUT (no file in 48.9s)
+[2026-02-04 07:26:01] Frame 231: TIMEOUT (no file in 24.1s)
+[2026-02-04 07:28:33] Frame 232: TIMEOUT (no file in 152.0s)
+[2026-02-04 07:30:24] Frame 233: TIMEOUT (no file in 111.1s)
+[2026-02-04 07:31:00] Frame 234: TIMEOUT (no file in 36.3s)
+[2026-02-04 07:31:58] Frame 235: TIMEOUT (no file in 57.6s)
+[2026-02-04 07:35:21] Frame 236: TIMEOUT (no file in 203.2s)
+[2026-02-04 07:36:28] Frame 237: TIMEOUT (no file in 66.3s)
+[2026-02-04 07:39:34] Frame 238: TIMEOUT (no file in 186.8s)
+[2026-02-04 07:39:54] Frame 239: TIMEOUT (no file in 19.3s)
+[2026-02-04 07:41:19] Frame 240: TIMEOUT (no file in 85.3s)
+[2026-02-04 07:42:49] Frame 241: TIMEOUT (no file in 90.2s)
+[2026-02-04 07:44:22] Frame 242: TIMEOUT (no file in 92.2s)
+[2026-02-04 07:46:19] Frame 243: TIMEOUT (no file in 117.5s)
+[2026-02-04 07:47:41] Frame 244: TIMEOUT (no file in 81.5s)
+[2026-02-04 07:48:42] Frame 245: TIMEOUT (no file in 61.7s)
+[2026-02-04 07:50:12] Frame 246: TIMEOUT (no file in 89.2s)
+[2026-02-04 07:52:02] Frame 247: TIMEOUT (no file in 110.0s)
+[2026-02-04 07:55:30] Frame 248: TIMEOUT (no file in 208.0s)
+[2026-02-04 07:56:09] Frame 249: TIMEOUT (no file in 39.6s)
+[2026-02-04 07:59:32] Frame 250: TIMEOUT (no file in 202.8s)
+[2026-02-04 08:01:45] Frame 251: TIMEOUT (no file in 133.2s)
+[2026-02-04 08:04:09] Frame 252: TIMEOUT (no file in 143.8s)
+[2026-02-04 08:05:53] Frame 253: TIMEOUT (no file in 104.4s)
+[2026-02-04 08:07:02] Frame 254: TIMEOUT (no file in 68.3s)
+[2026-02-04 08:09:35] Frame 255: TIMEOUT (no file in 153.1s)
+[2026-02-04 08:12:25] Frame 256: TIMEOUT (no file in 170.5s)
+[2026-02-04 08:13:33] Frame 257: TIMEOUT (no file in 67.8s)
+[2026-02-04 08:15:50] Frame 258: TIMEOUT (no file in 136.7s)
+[2026-02-04 08:18:54] Frame 259: TIMEOUT (no file in 183.5s)
+[2026-02-04 08:21:26] Frame 260: TIMEOUT (no file in 152.3s)
+[2026-02-04 08:23:13] Frame 261: TIMEOUT (no file in 107.4s)
+[2026-02-04 08:23:33] Frame 262: TIMEOUT (no file in 19.5s)
+[2026-02-04 08:25:24] Frame 263: TIMEOUT (no file in 111.4s)
+[2026-02-04 08:27:05] Frame 264: TIMEOUT (no file in 100.9s)
+[2026-02-04 08:28:55] Frame 265: TIMEOUT (no file in 110.0s)
+[2026-02-04 08:30:52] Frame 266: TIMEOUT (no file in 116.6s)
+[2026-02-04 08:34:15] Frame 267: TIMEOUT (no file in 202.9s)
+[2026-02-04 08:37:19] Frame 268: TIMEOUT (no file in 184.5s)
+[2026-02-04 08:40:29] Frame 269: TIMEOUT (no file in 189.8s)
+[2026-02-04 08:41:49] Frame 270: TIMEOUT (no file in 79.9s)
+[2026-02-04 08:43:58] Frame 271: TIMEOUT (no file in 129.0s)
+[2026-02-04 08:45:11] Frame 272: TIMEOUT (no file in 73.0s)
+[2026-02-04 08:47:50] Frame 273: TIMEOUT (no file in 159.0s)
+[2026-02-04 08:50:53] Frame 274: TIMEOUT (no file in 183.0s)
+[2026-02-04 08:54:05] Frame 275: TIMEOUT (no file in 192.3s)
+[2026-02-04 08:57:28] Frame 276: TIMEOUT (no file in 202.9s)
+[2026-02-04 08:58:14] Frame 277: TIMEOUT (no file in 45.4s)
+[2026-02-04 08:58:41] Frame 278: TIMEOUT (no file in 26.9s)
+[2026-02-04 08:59:52] Frame 279: TIMEOUT (no file in 70.8s)
+[2026-02-04 09:01:11] Frame 280: TIMEOUT (no file in 79.3s)
+[2026-02-04 09:04:33] Frame 281: TIMEOUT (no file in 201.7s)
+[2026-02-04 09:05:13] Frame 282: TIMEOUT (no file in 40.6s)
+[2026-02-04 09:05:50] Frame 283: TIMEOUT (no file in 36.4s)
+[2026-02-04 09:07:11] Frame 284: TIMEOUT (no file in 80.9s)
+[2026-02-04 09:08:11] Frame 285: TIMEOUT (no file in 60.5s)
+[2026-02-04 09:11:15] Frame 286: TIMEOUT (no file in 183.9s)
+[2026-02-04 09:13:21] Frame 287: TIMEOUT (no file in 126.2s)
+[2026-02-04 09:14:04] Frame 288: TIMEOUT (no file in 42.9s)
+[2026-02-04 09:14:19] Frame 289: TIMEOUT (no file in 14.7s)
+[2026-02-04 09:17:26] Frame 290: TIMEOUT (no file in 186.7s)
+[2026-02-04 09:20:44] Frame 291: TIMEOUT (no file in 198.5s)
+[2026-02-04 09:23:18] Frame 292: TIMEOUT (no file in 153.7s)
+[2026-02-04 09:23:34] Frame 293: TIMEOUT (no file in 16.4s)
+[2026-02-04 09:26:59] Frame 294: TIMEOUT (no file in 204.8s)
+[2026-02-04 09:28:08] Frame 295: TIMEOUT (no file in 68.9s)
+[2026-02-04 09:29:51] Frame 296: TIMEOUT (no file in 103.3s)
+[2026-02-04 09:33:12] Frame 297: TIMEOUT (no file in 200.5s)
+[2026-02-04 09:33:29] Frame 298: TIMEOUT (no file in 17.4s)
+[2026-02-04 09:36:37] Frame 299: TIMEOUT (no file in 188.1s)
+[2026-02-04 09:38:54] Frame 300: TIMEOUT (no file in 136.3s)
+[2026-02-04 09:39:52] Frame 301: TIMEOUT (no file in 58.5s)
+[2026-02-04 09:41:22] Frame 302: TIMEOUT (no file in 89.5s)
+[2026-02-04 09:44:47] Frame 303: TIMEOUT (no file in 205.6s)
+[2026-02-04 09:47:37] Frame 304: TIMEOUT (no file in 169.4s)
+[2026-02-04 09:50:12] Frame 305: TIMEOUT (no file in 154.6s)
+[2026-02-04 09:53:37] Frame 306: TIMEOUT (no file in 205.4s)
+[2026-02-04 09:56:09] Frame 307: TIMEOUT (no file in 152.5s)
+[2026-02-04 09:56:30] Frame 308: TIMEOUT (no file in 20.7s)
+[2026-02-04 09:57:05] Frame 309: TIMEOUT (no file in 34.5s)
+[2026-02-04 09:57:53] Frame 310: TIMEOUT (no file in 48.7s)
+[2026-02-04 10:00:11] Frame 311: TIMEOUT (no file in 137.2s)
+[2026-02-04 10:03:10] Frame 312: TIMEOUT (no file in 179.4s)
+[2026-02-04 10:06:22] Frame 313: TIMEOUT (no file in 191.6s)
+[2026-02-04 10:07:24] Frame 314: TIMEOUT (no file in 61.9s)
+[2026-02-04 10:10:37] Frame 315: TIMEOUT (no file in 193.1s)
+[2026-02-04 10:11:08] Frame 316: TIMEOUT (no file in 31.0s)
+[2026-02-04 10:12:16] Frame 317: TIMEOUT (no file in 68.5s)
+[2026-02-04 10:15:22] Frame 318: TIMEOUT (no file in 185.5s)
+[2026-02-04 10:17:25] Frame 319: TIMEOUT (no file in 123.3s)
+[2026-02-04 10:18:30] Frame 320: TIMEOUT (no file in 64.9s)
+[2026-02-04 10:20:29] Frame 321: TIMEOUT (no file in 119.2s)
+[2026-02-04 10:20:59] Frame 322: TIMEOUT (no file in 29.4s)
+[2026-02-04 10:23:55] Frame 323: TIMEOUT (no file in 176.4s)
+[2026-02-04 10:25:41] Frame 324: TIMEOUT (no file in 106.2s)
+[2026-02-04 10:26:27] Frame 325: TIMEOUT (no file in 45.4s)
+[2026-02-04 10:27:15] Frame 326: TIMEOUT (no file in 47.9s)
+[2026-02-04 10:27:36] Frame 327: TIMEOUT (no file in 21.3s)
+[2026-02-04 10:30:50] Frame 328: TIMEOUT (no file in 193.6s)
+[2026-02-04 10:33:03] Frame 329: TIMEOUT (no file in 133.7s)
+[2026-02-04 10:36:03] Frame 330: TIMEOUT (no file in 179.4s)
+[2026-02-04 10:36:20] Frame 331: TIMEOUT (no file in 16.9s)
+[2026-02-04 10:37:34] Frame 332: TIMEOUT (no file in 74.1s)
+[2026-02-04 10:40:59] Frame 333: TIMEOUT (no file in 205.5s)
+[2026-02-04 10:44:24] Frame 334: TIMEOUT (no file in 204.7s)
+[2026-02-04 10:47:03] Frame 335: TIMEOUT (no file in 158.9s)
+[2026-02-04 10:48:55] Frame 336: TIMEOUT (no file in 111.6s)
+[2026-02-04 10:50:40] Frame 337: TIMEOUT (no file in 105.5s)
+[2026-02-04 10:51:57] Frame 338: TIMEOUT (no file in 77.2s)
+[2026-02-04 10:55:04] Frame 339: TIMEOUT (no file in 186.5s)
+[2026-02-04 10:55:28] Frame 340: TIMEOUT (no file in 24.0s)
+[2026-02-04 10:56:03] Frame 341: TIMEOUT (no file in 35.2s)
+[2026-02-04 10:57:53] Frame 342: TIMEOUT (no file in 110.2s)
+[2026-02-04 11:00:05] Frame 343: TIMEOUT (no file in 132.0s)
+[2026-02-04 11:00:44] Frame 344: TIMEOUT (no file in 38.6s)
+[2026-02-04 11:02:13] Frame 345: TIMEOUT (no file in 88.5s)
+[2026-02-04 11:05:01] Frame 346: TIMEOUT (no file in 168.6s)
+[2026-02-04 11:06:00] Frame 347: TIMEOUT (no file in 58.6s)
+[2026-02-04 11:07:52] Frame 348: TIMEOUT (no file in 112.6s)
+[2026-02-04 11:08:47] Frame 349: TIMEOUT (no file in 54.8s)
+[2026-02-04 11:11:43] Frame 350: TIMEOUT (no file in 175.6s)
+[2026-02-04 11:13:23] Frame 351: TIMEOUT (no file in 100.2s)
+[2026-02-04 11:14:23] Frame 352: TIMEOUT (no file in 59.5s)
+[2026-02-04 11:16:19] Frame 353: TIMEOUT (no file in 116.4s)
+[2026-02-04 11:18:30] Frame 354: TIMEOUT (no file in 130.6s)
+[2026-02-04 11:21:36] Frame 355: TIMEOUT (no file in 186.0s)
+[2026-02-04 11:22:15] Frame 356: TIMEOUT (no file in 39.6s)
+[2026-02-04 11:24:15] Frame 357: TIMEOUT (no file in 120.1s)
+[2026-02-04 11:25:05] Frame 358: TIMEOUT (no file in 49.7s)
+[2026-02-04 11:26:09] Frame 359: TIMEOUT (no file in 63.7s)
+[2026-02-04 11:26:52] Frame 360: TIMEOUT (no file in 42.8s)
+[2026-02-04 11:28:13] Frame 361: TIMEOUT (no file in 81.2s)
+[2026-02-04 11:28:49] Frame 362: TIMEOUT (no file in 35.5s)
+[2026-02-04 11:30:05] Frame 363: TIMEOUT (no file in 76.6s)
+[2026-02-04 11:33:20] Frame 364: TIMEOUT (no file in 195.3s)
+[2026-02-04 11:34:15] Frame 365: TIMEOUT (no file in 54.5s)
+[2026-02-04 11:37:15] Frame 366: TIMEOUT (no file in 179.9s)
+[2026-02-04 11:39:13] Frame 367: TIMEOUT (no file in 118.5s)
+[2026-02-04 11:39:31] Frame 368: TIMEOUT (no file in 17.6s)
+[2026-02-04 11:41:08] Frame 369: TIMEOUT (no file in 97.1s)
+[2026-02-04 11:41:33] Frame 370: TIMEOUT (no file in 24.7s)
+[2026-02-04 11:42:12] Frame 371: TIMEOUT (no file in 39.5s)
+[2026-02-04 11:45:04] Frame 372: TIMEOUT (no file in 171.2s)
+[2026-02-04 11:45:55] Frame 373: TIMEOUT (no file in 51.5s)
+[2026-02-04 11:46:30] Frame 374: TIMEOUT (no file in 34.8s)
+[2026-02-04 11:48:05] Frame 375: TIMEOUT (no file in 95.3s)
+[2026-02-04 11:50:48] Frame 376: TIMEOUT (no file in 162.3s)
+[2026-02-04 11:52:46] Frame 377: TIMEOUT (no file in 118.6s)
+[2026-02-04 11:56:03] Frame 378: TIMEOUT (no file in 197.2s)
+[2026-02-04 11:59:08] Frame 379: TIMEOUT (no file in 184.7s)
+[2026-02-04 12:02:33] Frame 380: TIMEOUT (no file in 204.6s)
+[2026-02-04 12:05:18] Frame 381: TIMEOUT (no file in 165.5s)
+[2026-02-04 12:08:20] Frame 382: TIMEOUT (no file in 181.2s)
+[2026-02-04 12:09:18] Frame 383: TIMEOUT (no file in 58.3s)
+[2026-02-04 12:10:25] Frame 384: TIMEOUT (no file in 66.8s)
+[2026-02-04 12:12:50] Frame 385: TIMEOUT (no file in 144.9s)
+[2026-02-04 12:16:13] Frame 386: TIMEOUT (no file in 203.0s)
+[2026-02-04 12:18:13] Frame 387: TIMEOUT (no file in 120.1s)
+[2026-02-04 12:19:07] Frame 388: TIMEOUT (no file in 54.4s)
+[2026-02-04 12:21:14] Frame 389: TIMEOUT (no file in 126.5s)
+[2026-02-04 12:23:34] Frame 390: TIMEOUT (no file in 140.6s)
+[2026-02-04 12:25:54] Frame 391: TIMEOUT (no file in 139.4s)
+[2026-02-04 12:27:03] Frame 392: TIMEOUT (no file in 68.8s)
+[2026-02-04 12:28:28] Frame 393: TIMEOUT (no file in 85.7s)
+[2026-02-04 12:29:44] Frame 394: TIMEOUT (no file in 75.6s)
+[2026-02-04 12:33:06] Frame 395: TIMEOUT (no file in 201.8s)
+[2026-02-04 12:35:05] Frame 396: TIMEOUT (no file in 119.4s)
+[2026-02-04 12:37:01] Frame 397: TIMEOUT (no file in 115.8s)
+[2026-02-04 12:37:48] Frame 398: TIMEOUT (no file in 46.9s)
+[2026-02-04 12:38:34] Frame 399: TIMEOUT (no file in 45.6s)
+[2026-02-04 12:38:46] Frame 400: TIMEOUT (no file in 12.3s)
+[2026-02-04 12:41:39] Frame 401: TIMEOUT (no file in 173.6s)
+[2026-02-04 12:42:29] Frame 402: TIMEOUT (no file in 49.2s)
+[2026-02-04 12:42:41] Frame 403: TIMEOUT (no file in 12.2s)
+[2026-02-04 12:45:59] Frame 404: TIMEOUT (no file in 197.7s)
+[2026-02-04 12:47:25] Frame 405: TIMEOUT (no file in 86.0s)
+[2026-02-04 12:47:38] Frame 406: TIMEOUT (no file in 13.0s)
+[2026-02-04 12:50:23] Frame 407: TIMEOUT (no file in 165.2s)
+[2026-02-04 12:53:18] Frame 408: TIMEOUT (no file in 175.3s)
+[2026-02-04 12:55:13] Frame 409: TIMEOUT (no file in 115.1s)
+[2026-02-04 12:56:45] Frame 410: TIMEOUT (no file in 91.7s)
+[2026-02-04 12:59:23] Frame 411: TIMEOUT (no file in 157.5s)
+[2026-02-04 13:02:47] Frame 412: TIMEOUT (no file in 203.9s)
+[2026-02-04 13:05:07] Frame 413: TIMEOUT (no file in 140.5s)
+[2026-02-04 13:05:33] Frame 414: TIMEOUT (no file in 25.8s)
+[2026-02-04 13:07:01] Frame 415: TIMEOUT (no file in 88.3s)
+[2026-02-04 13:08:35] Frame 416: TIMEOUT (no file in 93.6s)
+[2026-02-04 13:09:33] Frame 417: TIMEOUT (no file in 57.6s)
+[2026-02-04 13:11:26] Frame 418: TIMEOUT (no file in 113.1s)
+[2026-02-04 13:12:41] Frame 419: TIMEOUT (no file in 75.7s)
+[2026-02-04 13:13:28] Frame 420: TIMEOUT (no file in 46.3s)
+[2026-02-04 13:14:50] Frame 421: TIMEOUT (no file in 82.3s)
+[2026-02-04 13:16:40] Frame 422: TIMEOUT (no file in 109.6s)
+[2026-02-04 13:18:57] Frame 423: TIMEOUT (no file in 137.6s)
+[2026-02-04 13:21:37] Frame 424: TIMEOUT (no file in 160.1s)
+[2026-02-04 13:22:19] Frame 425: TIMEOUT (no file in 41.7s)
+[2026-02-04 13:24:51] Frame 426: TIMEOUT (no file in 152.1s)
+[2026-02-04 13:26:12] Frame 427: TIMEOUT (no file in 80.8s)
+[2026-02-04 13:27:42] Frame 428: TIMEOUT (no file in 89.8s)
+[2026-02-04 13:29:47] Frame 429: TIMEOUT (no file in 124.8s)
+[2026-02-04 13:33:11] Frame 430: TIMEOUT (no file in 204.8s)
+[2026-02-04 13:36:12] Frame 431: TIMEOUT (no file in 180.5s)
+[2026-02-04 13:36:25] Frame 432: TIMEOUT (no file in 13.0s)
+[2026-02-04 13:39:46] Frame 433: TIMEOUT (no file in 200.6s)
+[2026-02-04 13:40:17] Frame 434: TIMEOUT (no file in 31.6s)
+[2026-02-04 13:40:40] Frame 435: TIMEOUT (no file in 22.9s)
+[2026-02-04 13:41:51] Frame 436: TIMEOUT (no file in 70.8s)
+[2026-02-04 13:44:29] Frame 437: TIMEOUT (no file in 158.1s)
+[2026-02-04 13:46:30] Frame 438: TIMEOUT (no file in 121.2s)
+[2026-02-04 13:48:28] Frame 439: TIMEOUT (no file in 118.1s)
+[2026-02-04 13:49:41] Frame 440: TIMEOUT (no file in 72.5s)
+[2026-02-04 13:52:20] Frame 441: TIMEOUT (no file in 159.1s)
+[2026-02-04 13:54:15] Frame 442: TIMEOUT (no file in 114.6s)
+[2026-02-04 13:55:22] Frame 443: TIMEOUT (no file in 67.2s)
+[2026-02-04 13:55:33] Frame 444: TIMEOUT (no file in 11.5s)
+[2026-02-04 13:58:16] Frame 445: TIMEOUT (no file in 162.4s)
+[2026-02-04 13:58:56] Frame 446: TIMEOUT (no file in 40.2s)
+[2026-02-04 14:00:05] Frame 447: TIMEOUT (no file in 69.2s)
+[2026-02-04 14:00:32] Frame 448: TIMEOUT (no file in 26.7s)
+[2026-02-04 14:02:04] Frame 449: TIMEOUT (no file in 92.3s)
+[2026-02-04 14:05:22] Frame 450: TIMEOUT (no file in 197.6s)
+[2026-02-04 14:08:43] Frame 451: TIMEOUT (no file in 201.1s)
+[2026-02-04 14:09:18] Frame 452: TIMEOUT (no file in 35.2s)
+[2026-02-04 14:09:33] Frame 453: TIMEOUT (no file in 14.7s)
+[2026-02-04 14:12:46] Frame 454: TIMEOUT (no file in 193.0s)
+[2026-02-04 14:15:02] Frame 455: TIMEOUT (no file in 135.4s)
+[2026-02-04 14:15:15] Frame 456: TIMEOUT (no file in 13.4s)
+[2026-02-04 14:17:21] Frame 457: TIMEOUT (no file in 126.4s)
+[2026-02-04 14:17:59] Frame 458: TIMEOUT (no file in 38.0s)
+[2026-02-04 14:19:14] Frame 459: TIMEOUT (no file in 74.1s)
+[2026-02-04 14:22:16] Frame 460: TIMEOUT (no file in 182.9s)
+[2026-02-04 14:22:36] Frame 461: TIMEOUT (no file in 19.6s)
+[2026-02-04 14:22:48] Frame 462: TIMEOUT (no file in 12.3s)
+[2026-02-04 14:25:55] Frame 463: TIMEOUT (no file in 186.5s)
+[2026-02-04 14:27:23] Frame 464: TIMEOUT (no file in 88.4s)
+[2026-02-04 14:30:29] Frame 465: TIMEOUT (no file in 185.6s)
+[2026-02-04 14:31:30] Frame 466: TIMEOUT (no file in 60.6s)
+[2026-02-04 14:32:16] Frame 467: TIMEOUT (no file in 46.4s)
+[2026-02-04 14:33:17] Frame 468: TIMEOUT (no file in 60.8s)
+[2026-02-04 14:33:29] Frame 469: TIMEOUT (no file in 12.4s)
+[2026-02-04 14:36:44] Frame 470: TIMEOUT (no file in 195.2s)
+[2026-02-04 14:37:03] Frame 471: TIMEOUT (no file in 18.7s)
+[2026-02-04 14:38:49] Frame 472: TIMEOUT (no file in 106.1s)
+[2026-02-04 14:39:07] Frame 473: TIMEOUT (no file in 17.7s)
+[2026-02-04 14:40:53] Frame 474: TIMEOUT (no file in 105.6s)
+[2026-02-04 14:43:52] Frame 475: TIMEOUT (no file in 179.4s)
+[2026-02-04 14:46:24] Frame 476: TIMEOUT (no file in 151.8s)
+[2026-02-04 14:47:30] Frame 477: TIMEOUT (no file in 65.8s)
+[2026-02-04 14:50:31] Frame 478: TIMEOUT (no file in 181.0s)
+[2026-02-04 14:52:48] Frame 479: TIMEOUT (no file in 136.9s)
+[2026-02-04 14:54:31] Frame 480: TIMEOUT (no file in 103.5s)
+[2026-02-04 14:56:48] Frame 481: TIMEOUT (no file in 136.9s)
+[2026-02-04 14:57:36] Frame 482: TIMEOUT (no file in 47.4s)
+[2026-02-04 14:58:49] Frame 483: TIMEOUT (no file in 73.1s)
+[2026-02-04 15:02:09] Frame 484: TIMEOUT (no file in 200.1s)
+[2026-02-04 15:02:26] Frame 485: TIMEOUT (no file in 17.2s)
+[2026-02-04 15:04:03] Frame 486: TIMEOUT (no file in 97.2s)
+[2026-02-04 15:07:32] Frame 487: TIMEOUT (no file in 208.5s)
+[2026-02-04 15:10:49] Frame 488: TIMEOUT (no file in 197.0s)
+[2026-02-04 15:11:54] Frame 489: TIMEOUT (no file in 64.7s)
+[2026-02-04 15:14:52] Frame 490: TIMEOUT (no file in 178.3s)
+[2026-02-04 15:15:19] Frame 491: TIMEOUT (no file in 26.7s)
+[2026-02-04 15:16:13] Frame 492: TIMEOUT (no file in 54.5s)
+[2026-02-04 15:19:22] Frame 493: TIMEOUT (no file in 188.8s)
+[2026-02-04 15:20:41] Frame 494: TIMEOUT (no file in 78.6s)
+[2026-02-04 15:22:52] Frame 495: TIMEOUT (no file in 131.3s)
+[2026-02-04 15:25:07] Frame 496: TIMEOUT (no file in 134.7s)
+[2026-02-04 15:26:36] Frame 497: TIMEOUT (no file in 88.9s)
+[2026-02-04 15:28:01] Frame 498: TIMEOUT (no file in 85.5s)
+[2026-02-04 15:28:54] Frame 499: TIMEOUT (no file in 53.0s)
+[2026-02-04 15:30:37] Frame 500: TIMEOUT (no file in 103.0s)
+
+=== SUMMARY ===
+frames_sent: 501
+frames_success: 39
+frame_success_rate: 0.07784431137724551
+total_bits_sent: 66976
+total_bit_errors: 83
+overall_ber: 0.0012392498805542285
+avg_wait_time_s: 103.20582916116778
+effective_throughput_bps: 2.5256985571050747
+total_wall_time_s: 51824.441255574005
+[2026-02-04 17:34:44] Frame 1: sent_bits=1662 expected_bytes=207 received_bytes=207 errors=4 ber=0.002415 wait_s=86.586
+[2026-02-04 17:35:34] Frame 2: sent_bits=946 expected_bytes=118 received_bytes=118 errors=0 ber=0.000000 wait_s=50.539
+[2026-02-04 17:36:41] Frame 3: sent_bits=1266 expected_bytes=158 received_bytes=158 errors=8 ber=0.006329 wait_s=66.629
+[2026-02-04 17:37:07] Frame 4: sent_bits=439 expected_bytes=54 received_bytes=54 errors=1 ber=0.002315 wait_s=25.017
+[2026-02-04 17:38:11] Frame 5: sent_bits=1218 expected_bytes=152 received_bytes=152 errors=0 ber=0.000000 wait_s=64.171
+[2026-02-04 17:38:17] Frame 6: sent_bits=68 expected_bytes=8 received_bytes=8 errors=0 ber=0.000000 wait_s=6.322
+[2026-02-04 17:39:36] Frame 7: sent_bits=1500 expected_bytes=187 received_bytes=187 errors=1 ber=0.000668 wait_s=78.305
+[2026-02-04 17:41:19] Frame 8: sent_bits=1991 expected_bytes=248 received_bytes=248 errors=7 ber=0.003528 wait_s=102.921
+[2026-02-04 17:42:56] Frame 9: sent_bits=1861 expected_bytes=232 received_bytes=232 errors=0 ber=0.000000 wait_s=96.401
+[2026-02-04 17:43:29] Frame 10: sent_bits=607 expected_bytes=75 received_bytes=75 errors=0 ber=0.000000 wait_s=33.385
+[2026-02-04 17:43:40] Frame 11: sent_bits=152 expected_bytes=19 received_bytes=19 errors=0 ber=0.000000 wait_s=10.528
+[2026-02-04 17:44:25] Frame 12: sent_bits=840 expected_bytes=105 received_bytes=105 errors=0 ber=0.000000 wait_s=45.071
+[2026-02-04 17:45:44] Frame 13: sent_bits=1513 expected_bytes=189 received_bytes=189 errors=3 ber=0.001984 wait_s=78.911
+[2026-02-04 17:47:25] Frame 14: sent_bits=1931 expected_bytes=241 received_bytes=241 errors=2 ber=0.001037 wait_s=99.962
+[2026-02-04 17:48:49] Frame 15: sent_bits=1627 expected_bytes=203 received_bytes=203 errors=3 ber=0.001847 wait_s=84.620
+[2026-02-04 17:49:25] Frame 16: sent_bits=650 expected_bytes=81 received_bytes=81 errors=0 ber=0.000000 wait_s=35.544
+[2026-02-04 17:52:14] Frame 17: TIMEOUT (no file in 169.0s)
+[2026-02-04 17:53:50] Frame 18: sent_bits=1845 expected_bytes=230 received_bytes=230 errors=4 ber=0.002174 wait_s=95.600
+[2026-02-04 17:54:04] Frame 19: sent_bits=227 expected_bytes=28 received_bytes=28 errors=0 ber=0.000000 wait_s=14.287
+[2026-02-04 17:54:27] Frame 20: sent_bits=394 expected_bytes=49 received_bytes=49 errors=0 ber=0.000000 wait_s=22.659
+[2026-02-04 17:56:09] Frame 21: sent_bits=1959 expected_bytes=244 received_bytes=244 errors=1 ber=0.000512 wait_s=101.363
+[2026-02-04 17:57:32] Frame 22: sent_bits=1601 expected_bytes=200 received_bytes=200 errors=3 ber=0.001875 wait_s=83.365
+[2026-02-04 17:59:02] Frame 23: sent_bits=1731 expected_bytes=216 received_bytes=216 errors=1 ber=0.000579 wait_s=89.888
+[2026-02-04 17:59:45] Frame 24: sent_bits=776 expected_bytes=97 received_bytes=97 errors=1 ber=0.001289 wait_s=41.857
+[2026-02-04 18:00:39] Frame 25: sent_bits=1016 expected_bytes=127 received_bytes=127 errors=0 ber=0.000000 wait_s=53.941
+[2026-02-04 18:01:39] Frame 26: sent_bits=1130 expected_bytes=141 received_bytes=141 errors=0 ber=0.000000 wait_s=59.661
+[2026-02-04 18:02:30] Frame 27: sent_bits=960 expected_bytes=120 received_bytes=120 errors=0 ber=0.000000 wait_s=51.080
+[2026-02-04 18:03:22] Frame 28: TIMEOUT (no file in 52.0s)
+[2026-02-04 18:04:45] Frame 29: sent_bits=1592 expected_bytes=199 received_bytes=199 errors=0 ber=0.000000 wait_s=82.865
+[2026-02-04 18:04:57] Frame 30: sent_bits=172 expected_bytes=21 received_bytes=21 errors=0 ber=0.000000 wait_s=11.530
+[2026-02-04 18:06:35] Frame 31: sent_bits=1903 expected_bytes=237 received_bytes=237 errors=4 ber=0.002110 wait_s=98.454
+[2026-02-04 18:06:51] Frame 32: sent_bits=248 expected_bytes=31 received_bytes=31 errors=0 ber=0.000000 wait_s=15.339
+[2026-02-04 18:07:12] Frame 33: sent_bits=362 expected_bytes=45 received_bytes=45 errors=0 ber=0.000000 wait_s=21.054
+[2026-02-04 18:07:29] Frame 34: sent_bits=273 expected_bytes=34 received_bytes=34 errors=0 ber=0.000000 wait_s=16.643
+[2026-02-04 18:07:38] Frame 35: sent_bits=122 expected_bytes=15 received_bytes=15 errors=0 ber=0.000000 wait_s=9.022
+[2026-02-04 18:09:10] Frame 36: sent_bits=1773 expected_bytes=221 received_bytes=221 errors=13 ber=0.007353 wait_s=91.944
+[2026-02-04 18:09:41] Frame 37: sent_bits=543 expected_bytes=67 received_bytes=67 errors=0 ber=0.000000 wait_s=30.178
+[2026-02-04 18:10:57] Frame 38: sent_bits=1449 expected_bytes=181 received_bytes=181 errors=1 ber=0.000691 wait_s=75.747
+[2026-02-04 18:11:48] Frame 39: sent_bits=969 expected_bytes=121 received_bytes=121 errors=0 ber=0.000000 wait_s=51.587
+[2026-02-04 18:12:34] Frame 40: sent_bits=849 expected_bytes=106 received_bytes=106 errors=2 ber=0.002358 wait_s=45.571
+[2026-02-04 18:13:42] Frame 41: sent_bits=1280 expected_bytes=160 received_bytes=160 errors=7 ber=0.005469 wait_s=67.226
+[2026-02-04 18:14:12] Frame 42: sent_bits=546 expected_bytes=68 received_bytes=68 errors=0 ber=0.000000 wait_s=30.278
+[2026-02-04 18:15:21] Frame 43: sent_bits=1320 expected_bytes=165 received_bytes=165 errors=1 ber=0.000758 wait_s=69.181
+[2026-02-04 18:15:46] Frame 44: sent_bits=430 expected_bytes=53 received_bytes=53 errors=0 ber=0.000000 wait_s=24.466
+[2026-02-04 18:16:04] Frame 45: sent_bits=286 expected_bytes=35 received_bytes=35 errors=2 ber=0.007143 wait_s=17.245
+[2026-02-04 18:16:45] Frame 46: sent_bits=756 expected_bytes=94 received_bytes=94 errors=0 ber=0.000000 wait_s=40.856
+[2026-02-04 18:17:31] Frame 47: sent_bits=856 expected_bytes=107 received_bytes=107 errors=3 ber=0.003505 wait_s=45.917
+[2026-02-04 18:18:37] Frame 48: sent_bits=1251 expected_bytes=156 received_bytes=156 errors=0 ber=0.000000 wait_s=65.722
+[2026-02-04 18:19:46] Frame 49: sent_bits=1309 expected_bytes=163 received_bytes=163 errors=1 ber=0.000767 wait_s=68.682
+[2026-02-04 18:20:54] Frame 50: sent_bits=1336 expected_bytes=167 received_bytes=167 errors=87 ber=0.065120 wait_s=67.779
+[2026-02-04 18:24:16] Frame 51: TIMEOUT (no file in 202.3s)
+[2026-02-04 18:24:43] Frame 52: sent_bits=471 expected_bytes=58 received_bytes=58 errors=5 ber=0.010776 wait_s=26.519
+[2026-02-04 18:26:05] Frame 53: sent_bits=1575 expected_bytes=196 received_bytes=196 errors=4 ber=0.002551 wait_s=82.064
+[2026-02-04 18:27:48] Frame 54: sent_bits=1998 expected_bytes=249 received_bytes=249 errors=3 ber=0.001506 wait_s=103.273
+[2026-02-04 18:28:34] Frame 55: sent_bits=843 expected_bytes=105 received_bytes=105 errors=0 ber=0.000000 wait_s=45.268
+[2026-02-04 18:29:05] Frame 56: sent_bits=559 expected_bytes=69 received_bytes=69 errors=0 ber=0.000000 wait_s=30.985
+[2026-02-04 18:29:09] Frame 57: sent_bits=21 expected_bytes=2 received_bytes=2 errors=0 ber=0.000000 wait_s=3.910
+[2026-02-04 18:30:53] Frame 58: sent_bits=2000 expected_bytes=250 received_bytes=250 errors=9 ber=0.004500 wait_s=103.430
+[2026-02-04 18:31:44] Frame 59: sent_bits=953 expected_bytes=119 received_bytes=119 errors=0 ber=0.000000 wait_s=50.782
+[2026-02-04 18:32:17] Frame 60: sent_bits=603 expected_bytes=75 received_bytes=75 errors=0 ber=0.000000 wait_s=33.186
+[2026-02-04 18:33:02] Frame 61: sent_bits=837 expected_bytes=104 received_bytes=104 errors=4 ber=0.004808 wait_s=44.916
+[2026-02-04 18:33:39] Frame 62: sent_bits=661 expected_bytes=82 received_bytes=82 errors=2 ber=0.003049 wait_s=36.093
+[2026-02-04 18:34:02] Frame 63: sent_bits=403 expected_bytes=50 received_bytes=50 errors=0 ber=0.000000 wait_s=23.111
+[2026-02-04 18:35:30] Frame 64: sent_bits=1692 expected_bytes=211 received_bytes=211 errors=6 ber=0.003555 wait_s=87.889
+[2026-02-04 18:36:46] Frame 65: TIMEOUT (no file in 76.0s)
+[2026-02-04 18:38:22] Frame 66: sent_bits=1847 expected_bytes=230 received_bytes=230 errors=6 ber=0.003261 wait_s=95.698
+[2026-02-04 18:39:45] Frame 67: sent_bits=1604 expected_bytes=200 received_bytes=200 errors=6 ber=0.003750 wait_s=83.469
+[2026-02-04 18:40:01] Frame 68: sent_bits=251 expected_bytes=31 received_bytes=31 errors=0 ber=0.000000 wait_s=15.491
+[2026-02-04 18:41:16] Frame 69: sent_bits=1431 expected_bytes=178 received_bytes=178 errors=0 ber=0.000000 wait_s=74.793
+[2026-02-04 18:42:28] Frame 70: sent_bits=1365 expected_bytes=170 received_bytes=170 errors=2 ber=0.001471 wait_s=71.490
+[2026-02-04 18:44:04] Frame 71: sent_bits=1846 expected_bytes=230 received_bytes=230 errors=3 ber=0.001630 wait_s=95.651
+[2026-02-04 18:45:43] Frame 72: TIMEOUT (no file in 99.4s)
+[2026-02-04 18:48:00] Frame 73: TIMEOUT (no file in 136.2s)
+[2026-02-04 18:50:47] Frame 74: TIMEOUT (no file in 167.6s)
+[2026-02-04 18:53:51] Frame 75: TIMEOUT (no file in 183.5s)
+[2026-02-04 18:57:18] Frame 76: TIMEOUT (no file in 207.2s)
+[2026-02-04 18:59:25] Frame 77: TIMEOUT (no file in 126.8s)
+[2026-02-04 19:02:15] Frame 78: TIMEOUT (no file in 170.5s)
+[2026-02-04 19:04:09] Frame 79: TIMEOUT (no file in 113.8s)
+[2026-02-04 19:05:57] Frame 80: TIMEOUT (no file in 108.2s)
+[2026-02-04 19:06:17] Frame 81: TIMEOUT (no file in 20.1s)
+[2026-02-04 19:08:16] Frame 82: TIMEOUT (no file in 119.0s)
+[2026-02-04 19:11:14] Frame 83: TIMEOUT (no file in 177.9s)
+[2026-02-04 19:13:32] Frame 84: TIMEOUT (no file in 137.8s)
+[2026-02-04 19:14:01] Frame 85: TIMEOUT (no file in 29.2s)
+[2026-02-04 19:15:35] Frame 86: TIMEOUT (no file in 93.1s)
+[2026-02-04 19:18:03] Frame 87: TIMEOUT (no file in 148.3s)
+[2026-02-04 19:19:58] Frame 88: TIMEOUT (no file in 115.2s)
+[2026-02-04 19:22:32] Frame 89: TIMEOUT (no file in 154.2s)
+[2026-02-04 19:23:52] Frame 90: TIMEOUT (no file in 79.9s)
+[2026-02-04 19:25:07] Frame 91: TIMEOUT (no file in 74.6s)
+[2026-02-04 19:28:12] Frame 92: TIMEOUT (no file in 184.8s)
+[2026-02-04 19:31:06] Frame 93: TIMEOUT (no file in 173.9s)
+[2026-02-04 19:33:25] Frame 94: TIMEOUT (no file in 139.3s)
+[2026-02-04 19:36:16] Frame 95: TIMEOUT (no file in 171.2s)
+[2026-02-04 19:37:31] Frame 96: TIMEOUT (no file in 74.9s)
+[2026-02-04 19:40:44] Frame 97: TIMEOUT (no file in 193.1s)
+[2026-02-04 19:43:16] Frame 98: TIMEOUT (no file in 151.3s)
+[2026-02-04 19:45:58] Frame 99: TIMEOUT (no file in 162.4s)
+[2026-02-04 19:48:58] Frame 100: TIMEOUT (no file in 179.6s)
+[2026-02-04 19:51:27] Frame 101: TIMEOUT (no file in 149.3s)
+[2026-02-04 19:53:31] Frame 102: TIMEOUT (no file in 123.7s)
+[2026-02-04 19:55:50] Frame 103: TIMEOUT (no file in 139.2s)
+[2026-02-04 19:57:56] Frame 104: TIMEOUT (no file in 125.8s)
+[2026-02-04 20:00:14] Frame 105: TIMEOUT (no file in 138.1s)
+[2026-02-04 20:00:48] Frame 106: TIMEOUT (no file in 34.3s)
+[2026-02-04 20:04:03] Frame 107: TIMEOUT (no file in 195.0s)
+[2026-02-04 20:06:25] Frame 108: TIMEOUT (no file in 141.4s)
+[2026-02-04 20:06:52] Frame 109: TIMEOUT (no file in 27.8s)
+[2026-02-04 20:08:44] Frame 110: TIMEOUT (no file in 111.7s)
+[2026-02-04 20:09:35] Frame 111: TIMEOUT (no file in 50.6s)
+[2026-02-04 20:10:25] Frame 112: TIMEOUT (no file in 50.0s)
+[2026-02-04 20:10:55] Frame 113: TIMEOUT (no file in 29.7s)
+[2026-02-04 20:11:48] Frame 114: TIMEOUT (no file in 53.0s)
+[2026-02-04 20:14:22] Frame 115: TIMEOUT (no file in 154.0s)
+[2026-02-04 20:14:36] Frame 116: TIMEOUT (no file in 14.3s)
+[2026-02-04 20:17:25] Frame 117: TIMEOUT (no file in 168.8s)
+[2026-02-04 20:20:37] Frame 118: TIMEOUT (no file in 192.5s)
+[2026-02-04 20:23:25] Frame 119: TIMEOUT (no file in 167.6s)
+[2026-02-04 20:26:01] Frame 120: TIMEOUT (no file in 156.5s)
+[2026-02-04 20:29:05] Frame 121: TIMEOUT (no file in 183.1s)
+[2026-02-04 20:29:59] Frame 122: TIMEOUT (no file in 54.3s)
+[2026-02-04 20:30:39] Frame 123: TIMEOUT (no file in 39.8s)
+[2026-02-04 20:33:34] Frame 124: TIMEOUT (no file in 175.2s)
+[2026-02-04 20:33:49] Frame 125: TIMEOUT (no file in 15.3s)
+[2026-02-04 20:36:56] Frame 126: TIMEOUT (no file in 186.4s)
+[2026-02-04 20:39:53] Frame 127: TIMEOUT (no file in 177.2s)
+[2026-02-04 20:41:48] Frame 128: TIMEOUT (no file in 114.6s)
+[2026-02-04 20:43:16] Frame 129: TIMEOUT (no file in 88.8s)
+[2026-02-04 20:45:16] Frame 130: TIMEOUT (no file in 119.5s)
+[2026-02-04 20:48:17] Frame 131: TIMEOUT (no file in 181.1s)
+[2026-02-04 20:48:45] Frame 132: TIMEOUT (no file in 28.0s)
+[2026-02-04 20:50:53] Frame 133: TIMEOUT (no file in 127.5s)
+[2026-02-04 20:53:56] Frame 134: TIMEOUT (no file in 183.8s)
+[2026-02-04 20:54:27] Frame 135: TIMEOUT (no file in 30.6s)
+[2026-02-04 20:54:41] Frame 136: TIMEOUT (no file in 13.7s)
+[2026-02-04 20:55:42] Frame 137: TIMEOUT (no file in 61.1s)
+[2026-02-04 20:57:36] Frame 138: TIMEOUT (no file in 113.7s)
+[2026-02-04 20:58:42] Frame 139: TIMEOUT (no file in 66.7s)
+[2026-02-04 21:01:22] Frame 140: TIMEOUT (no file in 159.3s)
+[2026-02-04 21:03:55] Frame 141: TIMEOUT (no file in 152.9s)
+[2026-02-04 21:04:38] Frame 142: TIMEOUT (no file in 42.9s)
+[2026-02-04 21:05:04] Frame 143: TIMEOUT (no file in 26.3s)
+[2026-02-04 21:07:23] Frame 144: TIMEOUT (no file in 139.3s)
+[2026-02-04 21:09:07] Frame 145: TIMEOUT (no file in 103.8s)
+[2026-02-04 21:09:43] Frame 146: TIMEOUT (no file in 36.1s)
+[2026-02-04 21:10:48] Frame 147: TIMEOUT (no file in 65.3s)
+[2026-02-04 21:14:08] Frame 148: TIMEOUT (no file in 199.8s)
+[2026-02-04 21:16:59] Frame 149: TIMEOUT (no file in 170.8s)
+[2026-02-04 21:18:40] Frame 150: TIMEOUT (no file in 100.4s)
+[2026-02-04 21:21:30] Frame 151: TIMEOUT (no file in 170.2s)
+[2026-02-04 21:24:50] Frame 152: TIMEOUT (no file in 200.0s)
+[2026-02-04 21:25:55] Frame 153: TIMEOUT (no file in 64.9s)
+[2026-02-04 21:28:59] Frame 154: TIMEOUT (no file in 184.1s)
+[2026-02-04 21:30:22] Frame 155: TIMEOUT (no file in 83.2s)
+[2026-02-04 21:30:43] Frame 156: TIMEOUT (no file in 20.7s)
+[2026-02-04 21:33:48] Frame 157: TIMEOUT (no file in 185.2s)
+[2026-02-04 21:36:55] Frame 158: TIMEOUT (no file in 186.5s)
+[2026-02-04 21:39:27] Frame 159: TIMEOUT (no file in 152.9s)
+[2026-02-04 21:41:34] Frame 160: TIMEOUT (no file in 126.3s)
+[2026-02-04 21:44:08] Frame 161: TIMEOUT (no file in 154.5s)
+[2026-02-04 21:45:20] Frame 162: TIMEOUT (no file in 72.0s)
+[2026-02-04 21:46:28] Frame 163: TIMEOUT (no file in 67.9s)
+[2026-02-04 21:47:04] Frame 164: TIMEOUT (no file in 35.5s)
+[2026-02-04 21:48:23] Frame 165: TIMEOUT (no file in 79.6s)
+[2026-02-04 21:51:04] Frame 166: TIMEOUT (no file in 160.2s)
+[2026-02-04 21:54:26] Frame 167: TIMEOUT (no file in 201.8s)
+[2026-02-04 21:55:45] Frame 168: TIMEOUT (no file in 79.8s)
+[2026-02-04 21:58:35] Frame 169: TIMEOUT (no file in 169.5s)
+[2026-02-04 21:59:04] Frame 170: TIMEOUT (no file in 29.1s)
+[2026-02-04 22:00:10] Frame 171: TIMEOUT (no file in 66.0s)
+[2026-02-04 22:03:38] Frame 172: TIMEOUT (no file in 207.6s)
+[2026-02-04 22:04:07] Frame 173: TIMEOUT (no file in 28.9s)
+[2026-02-04 22:07:06] Frame 174: TIMEOUT (no file in 179.8s)
+[2026-02-04 22:07:18] Frame 175: TIMEOUT (no file in 11.2s)
+[2026-02-04 22:10:13] Frame 176: TIMEOUT (no file in 175.1s)
+[2026-02-04 22:12:37] Frame 177: TIMEOUT (no file in 143.9s)
+[2026-02-04 22:14:31] Frame 178: TIMEOUT (no file in 114.0s)
+[2026-02-04 22:15:53] Frame 179: TIMEOUT (no file in 82.1s)
+[2026-02-04 22:18:28] Frame 180: TIMEOUT (no file in 155.5s)
+[2026-02-04 22:21:48] Frame 181: TIMEOUT (no file in 199.5s)
+[2026-02-04 22:25:09] Frame 182: TIMEOUT (no file in 200.6s)
+[2026-02-04 22:25:58] Frame 183: TIMEOUT (no file in 49.3s)
+[2026-02-04 22:28:44] Frame 184: TIMEOUT (no file in 165.8s)
+[2026-02-04 22:30:09] Frame 185: TIMEOUT (no file in 85.3s)
+[2026-02-04 22:31:13] Frame 186: TIMEOUT (no file in 63.7s)
+[2026-02-04 22:34:03] Frame 187: TIMEOUT (no file in 170.5s)
+[2026-02-04 22:34:34] Frame 188: TIMEOUT (no file in 30.3s)
+
+=== SUMMARY ===
+frames_sent: 189
+frames_success: 33
+frame_success_rate: 0.1746031746031746
+total_bits_sent: 70272
+total_bit_errors: 210
+overall_ber: 0.0029883879781420764
+avg_wait_time_s: 95.57125076698424
+effective_throughput_bps: 6.643466717238767
+total_wall_time_s: 18171.563586045
+
+=== SUMMARY ===
+frames_sent: 1
+frames_success: 0
+frame_success_rate: 0.0
+total_bits_sent: 0
+total_bit_errors: 0
+overall_ber: 0.0
+avg_wait_time_s: 0.0
+effective_throughput_bps: 0.0
+total_wall_time_s: 6.304169189999811
+[2026-02-04 22:37:52] Frame 1: sent_bits=241 expected_bytes=30 received_bytes=30 errors=0 ber=0.000000 wait_s=15.791
+[2026-02-04 22:38:45] Frame 2: sent_bits=978 expected_bytes=122 received_bytes=122 errors=2 ber=0.002049 wait_s=52.950
+[2026-02-04 22:39:43] Frame 3: sent_bits=1066 expected_bytes=133 received_bytes=133 errors=0 ber=0.000000 wait_s=57.740
+[2026-02-04 22:40:31] Frame 4: sent_bits=869 expected_bytes=108 received_bytes=108 errors=0 ber=0.000000 wait_s=47.585
+[2026-02-04 22:40:58] Frame 5: sent_bits=465 expected_bytes=58 received_bytes=58 errors=0 ber=0.000000 wait_s=27.179
+[2026-02-04 22:41:55] Frame 6: sent_bits=1055 expected_bytes=131 received_bytes=131 errors=0 ber=0.000000 wait_s=57.020
+[2026-02-04 22:43:03] Frame 7: sent_bits=1271 expected_bytes=158 received_bytes=158 errors=0 ber=0.000000 wait_s=67.911
+[2026-02-04 22:43:48] Frame 8: sent_bits=806 expected_bytes=100 received_bytes=100 errors=0 ber=0.000000 wait_s=44.477
+[2026-02-04 22:45:20] Frame 9: sent_bits=1742 expected_bytes=217 received_bytes=217 errors=0 ber=0.000000 wait_s=91.762
+[2026-02-04 22:46:44] Frame 10: sent_bits=1585 expected_bytes=198 received_bytes=198 errors=1 ber=0.000631 wait_s=83.786
+[2026-02-04 22:47:45] Frame 11: sent_bits=1136 expected_bytes=142 received_bytes=142 errors=2 ber=0.001761 wait_s=60.970
+[2026-02-04 22:48:14] Frame 12: sent_bits=494 expected_bytes=61 received_bytes=61 errors=0 ber=0.000000 wait_s=28.628
+[2026-02-04 22:49:56] Frame 13: sent_bits=1944 expected_bytes=243 received_bytes=243 errors=0 ber=0.000000 wait_s=101.842
+[2026-02-04 22:50:08] Frame 14: sent_bits=162 expected_bytes=20 received_bytes=20 errors=0 ber=0.000000 wait_s=11.883
+[2026-02-04 22:51:47] Frame 15: sent_bits=1887 expected_bytes=235 received_bytes=235 errors=3 ber=0.001596 wait_s=98.839
+[2026-02-04 22:53:18] Frame 16: sent_bits=1731 expected_bytes=216 received_bytes=216 errors=1 ber=0.000579 wait_s=91.009
+[2026-02-04 22:54:46] Frame 17: sent_bits=1650 expected_bytes=206 received_bytes=206 errors=0 ber=0.000000 wait_s=86.961
+[2026-02-04 22:55:20] Frame 18: sent_bits=614 expected_bytes=76 received_bytes=76 errors=0 ber=0.000000 wait_s=34.644
+[2026-02-04 22:56:46] Frame 19: sent_bits=1616 expected_bytes=202 received_bytes=202 errors=5 ber=0.003094 wait_s=85.128
+[2026-02-04 22:58:10] Frame 20: sent_bits=1599 expected_bytes=199 received_bytes=199 errors=5 ber=0.003141 wait_s=84.500
+[2026-02-04 22:58:34] Frame 21: sent_bits=389 expected_bytes=48 received_bytes=48 errors=1 ber=0.002604 wait_s=23.260
+[2026-02-04 23:00:05] Frame 22: sent_bits=1720 expected_bytes=215 received_bytes=215 errors=6 ber=0.003488 wait_s=90.576
+[2026-02-04 23:00:22] Frame 23: sent_bits=268 expected_bytes=33 received_bytes=33 errors=0 ber=0.000000 wait_s=17.257
+[2026-02-04 23:01:45] Frame 24: sent_bits=1569 expected_bytes=196 received_bytes=196 errors=3 ber=0.001913 wait_s=82.831
+[2026-02-04 23:03:02] Frame 25: sent_bits=1442 expected_bytes=180 received_bytes=180 errors=0 ber=0.000000 wait_s=76.532
+[2026-02-04 23:03:28] Frame 26: sent_bits=444 expected_bytes=55 received_bytes=55 errors=0 ber=0.000000 wait_s=26.130
+[2026-02-04 23:03:34] Frame 27: sent_bits=35 expected_bytes=4 received_bytes=4 errors=0 ber=0.000000 wait_s=5.465
+[2026-02-04 23:03:46] Frame 28: sent_bits=172 expected_bytes=21 received_bytes=21 errors=0 ber=0.000000 wait_s=12.386
+[2026-02-04 23:03:59] Frame 29: sent_bits=179 expected_bytes=22 received_bytes=22 errors=1 ber=0.005682 wait_s=12.687
+[2026-02-04 23:04:48] Frame 30: sent_bits=877 expected_bytes=109 received_bytes=109 errors=0 ber=0.000000 wait_s=47.991
+[2026-02-04 23:06:10] Frame 31: sent_bits=1548 expected_bytes=193 received_bytes=193 errors=0 ber=0.000000 wait_s=81.894
+[2026-02-04 23:06:37] Frame 32: sent_bits=466 expected_bytes=58 received_bytes=58 errors=0 ber=0.000000 wait_s=27.240
+[2026-02-04 23:07:10] Frame 33: sent_bits=584 expected_bytes=73 received_bytes=73 errors=0 ber=0.000000 wait_s=33.198
+[2026-02-04 23:08:42] Frame 34: sent_bits=1741 expected_bytes=217 received_bytes=217 errors=0 ber=0.000000 wait_s=91.620
+[2026-02-04 23:09:56] Frame 35: sent_bits=1386 expected_bytes=173 received_bytes=173 errors=1 ber=0.000723 wait_s=73.669
+[2026-02-04 23:11:38] Frame 36: sent_bits=1930 expected_bytes=241 received_bytes=241 errors=0 ber=0.000000 wait_s=101.248
+[2026-02-04 23:13:09] Frame 37: sent_bits=1727 expected_bytes=215 received_bytes=215 errors=0 ber=0.000000 wait_s=90.974
+[2026-02-04 23:14:17] Frame 38: sent_bits=1276 expected_bytes=159 received_bytes=159 errors=2 ber=0.001572 wait_s=68.261
+[2026-02-04 23:15:49] Frame 39: sent_bits=1732 expected_bytes=216 received_bytes=216 errors=1 ber=0.000579 wait_s=91.331
+[2026-02-04 23:16:54] Frame 40: sent_bits=1214 expected_bytes=151 received_bytes=151 errors=0 ber=0.000000 wait_s=65.091
+[2026-02-04 23:17:01] Frame 41: sent_bits=56 expected_bytes=7 received_bytes=7 errors=0 ber=0.000000 wait_s=6.520
+[2026-02-04 23:18:27] Frame 42: sent_bits=1626 expected_bytes=203 received_bytes=203 errors=0 ber=0.000000 wait_s=85.854
+[2026-02-04 23:19:55] Frame 43: sent_bits=1660 expected_bytes=207 received_bytes=207 errors=1 ber=0.000604 wait_s=87.608
+[2026-02-04 23:20:07] Frame 44: sent_bits=161 expected_bytes=20 received_bytes=20 errors=0 ber=0.000000 wait_s=11.835
+[2026-02-04 23:20:35] Frame 45: sent_bits=481 expected_bytes=60 received_bytes=60 errors=0 ber=0.000000 wait_s=28.034
+[2026-02-04 23:22:13] Frame 46: sent_bits=1868 expected_bytes=233 received_bytes=233 errors=1 ber=0.000536 wait_s=98.208
+[2026-02-04 23:23:09] Frame 47: sent_bits=1023 expected_bytes=127 received_bytes=127 errors=0 ber=0.000000 wait_s=55.557
+[2026-02-04 23:23:57] Frame 48: sent_bits=860 expected_bytes=107 received_bytes=107 errors=0 ber=0.000000 wait_s=47.251
+
+=== SUMMARY ===
+frames_sent: 49
+frames_success: 32
+frame_success_rate: 0.6530612244897959
+total_bits_sent: 51184
+total_bit_errors: 36
+overall_ber: 0.0007033447952485152
+avg_wait_time_s: 56.553303240918396
+effective_throughput_bps: 19.067643385710827
+total_wall_time_s: 2869.3727140779956
